@@ -1,0 +1,19 @@
+/* Variables de estilo */
+ 
+html {
+    /* color de fondo y color de letra navBar */
+    --bgColor: #F7F7F5;
+    --bgnavBarColor: #2E2E2E;
+ 
+    /* Quienes somos? */
+    --h2Color: #506078; 
+    --h2Font: "Poppins", "sans-serif";
+ 
+    /* Vision, mision, valores, titulos de bios. */
+    --titleMision: #B46E4C;
+    
+    /* parrafos */
+    --pColor: Black;
+    --pFont: "Inter", "sans-serif";
+}
+
