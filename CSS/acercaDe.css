@@ -16,117 +16,58 @@ html {
     --pColor: Black;
     --pFont: "Inter", "sans-serif";
 }
-/* Tarjetas de Biografías */
 
-/* Contenedor general */
-/* Fondo general */
+
 body {
-  background: var(--bgColor);
-  font-family: var(--pFont);
-  color: var(--pColor);
+    background-color: var(--bgColor);
+    font-family: var(--h2Font),
+    margin: 0;
+    padding: 0;
 }
 
-/* H1 (tu h1 está fuera del body en el HTML, igual lo estilamos) */
-h1 {
-  font-family: var(--h2Font);
-  color: var(--h2Color);
-  text-align: center;
-  margin: 1.25rem 0;
-  font-size: 2rem;
-  letter-spacing: 0.2px;
+.titulo {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--titleMision);
 }
 
-/* Margen superior para el grid */
-.row.row-cols-1.row-cols-md-3.g-4 {
-  margin: 1.8rem auto;
-  padding: 0 1rem;
-  max-width: 1200px;
+.tarjeta {
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+    transition: transform .2s ease-in-out, box-shadow .2s ease-in-out;
 }
 
-/* Selector muy específico para sobrescribir Bootstrap por si el CSS se carga antes */
-.row.row-cols-1.row-cols-md-3.g-4 .col > .card.h-100 {
-  border: none;
-  border-radius: 14px;
-  overflow: hidden;
-  background: #ffffff;
-  box-shadow: 0 10px 30px rgba(16, 24, 40, 0.08);
-  transition: transform .28s cubic-bezier(.2,.9,.3,1), box-shadow .28s;
-  display: flex;
-  flex-direction: column;
-  height: 100%;
+.tarjeta:hover {
+    transform: scale(1.04);
+    box-shadow: 0px 6px 18px rgba(0,0,0,0.2);
 }
 
-/* Hover */
-.row.row-cols-1.row-cols-md-3.g-4 .col > .card.h-100:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 20px 45px rgba(16, 24, 40, 0.12);
+.tarjeta img {
+    height: 260px;
+    object-fit: cover;
 }
 
-/* Imagen: forzamos tamaño uniforme y crop usando object-fit.
-   Usamos !important para asegurar que Bootstrap no lo sobrescriba cuando sea necesario. */
-.row.row-cols-1.row-cols-md-3.g-4 .col > .card.h-100 .card-img-top {
-  width: 100% !important;
-  height: 300px !important;           /* Ajusta este valor si quieres imágenes más altas */
-  object-fit: cover !important;
-  object-position: center !important;
-  display: block;
-  transition: transform .6s ease;
+.card-body {
+    background: #fff;
+    padding: 20px;
 }
 
-/* Zoom suave de imagen al hover */
-.row.row-cols-1.row-cols-md-3.g-4 .col > .card.h-100:hover .card-img-top {
-  transform: scale(1.06);
+.card-title {
+    font-weight: bold;
+    font-size: 1.25rem;
+    margin-bottom: 10px;
 }
 
-/* Cuerpo de la card: espaciado y que el contenido ocupe lo necesario */
-.row.row-cols-1.row-cols-md-3.g-4 .col > .card.h-100 .card-body {
-  padding: 1.15rem 1.15rem 1rem;
-  flex: 1 1 auto;
+.card-text {
+    color: #555;
+    font-size: 0.95rem;
 }
 
-/* Título (nombre) */
-.row.row-cols-1.row-cols-md-3.g-4 .col > .card.h-100 .card-title {
-  font-family: var(--h2Font) !important;
-  color: var(--titleMision) !important;
-  font-size: 1.15rem !important;
-  font-weight: 600 !important;
-  margin-bottom: 0.35rem !important;
+.card-body {
+    background: var(--bgnavBarColor);
+    padding: 20px;
 }
 
-/* Texto descriptivo */
-.row.row-cols-1.row-cols-md-3.g-4 .col > .card.h-100 .card-text {
-  font-family: var(--pFont) !important;
-  color: var(--pColor) !important;
-  font-size: 0.95rem !important;
-  line-height: 1.45 !important;
-  margin: 0;
-}
-
-/* Footer de la card */
-.row.row-cols-1.row-cols-md-3.g-4 .col > .card.h-100 .card-footer {
-  background: #fbfbfb !important;
-  border-top: none !important;
-  font-family: var(--pFont) !important;
-  font-size: 0.82rem !important;
-  color: var(--h2Color) !important;
-  padding: 0.7rem 1rem !important;
-}
-
-/* Pequeñas mejoras responsivas (si deseas ajustes finos) */
-@media (max-width: 992px) {
-  .row.row-cols-1.row-cols-md-3.g-4 .col > .card.h-100 .card-img-top {
-    height: 260px !important;
-  }
-}
-@media (max-width: 576px) {
-  .row.row-cols-1.row-cols-md-3.g-4 .col > .card.h-100 .card-img-top {
-    height: 200px !important;
-  }
-}
-
-/* Accesibilidad: foco visible para tarjetas si son enfocables */
-.row.row-cols-1.row-cols-md-3.g-4 .col > .card.h-100:focus-within,
-.row.row-cols-1.row-cols-md-3.g-4 .col > .card.h-100:focus {
-  outline: 3px solid rgba(180,110,76,0.12);
-  outline-offset: 4px;
-}
