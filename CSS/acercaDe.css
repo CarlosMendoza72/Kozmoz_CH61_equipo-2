@@ -4,7 +4,9 @@ html {
     /* color de fondo y color de letra navBar */
     --bgColor: #F7F7F5;
     --bgnavBarColor: #2E2E2E;
- 
+    --navBarLogo: "Montserrat", "sans-serif";
+
+
     /* Quienes somos? */
     --h2Color: #506078; 
     --h2Font: "Poppins", "sans-serif";
@@ -16,4 +18,35 @@ html {
     --pColor: Black;
     --pFont: "Inter", "sans-serif";
 }
+
+
+/*Yerania NavBar*/
+/*Texto del logotipo*/
+.logo-text {
+    font-family: var(--navBarLogo);
+    font-size: 1.8rem;
+    letter-spacing: 2px;
+    font-weight: 700;
+    color: var(--bgColor);
+}
+
+/* Ajustes de los enlaces del navbar */
+.navbar-nav .nav-link {
+    font-size: 0.95rem;
+    font-weight: 400;
+    transition: 0.3s ease;
+    color: var(--bgColor);
+}
+
+/*Efecto hover cuando el usuario pasa el mouse*/
+.navbar-nav .nav-link:hover {
+    color: var(--titleMision); 
+}
+
+/* Ajuste pequeño para separar un poco los enlaces del navBar */
+.nav-item {
+    margin-left: 10px;
+}
+
+/*/Yerania NavBar*/
 
