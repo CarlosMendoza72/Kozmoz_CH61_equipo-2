@@ -17,7 +17,7 @@ html {
     --pFont: "Inter", "sans-serif";
 }
 
-
+/*Tarjetas* Jess & Karen*/
 body {
     background-color: var(--bgColor);
     font-family: var(--h2Font),
@@ -71,3 +71,4 @@ body {
     padding: 20px;
 }
 
+/*Tarjetas Jess y Karen*/
