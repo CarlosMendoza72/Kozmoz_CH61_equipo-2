@@ -18,88 +18,115 @@ html {
 }
 /* Tarjetas de Biografías */
 
-.team-container {
-  max-width: 1200px;
-  margin: 3rem auto;
-  padding: 1.5rem;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 1.8rem;
+/* Contenedor general */
+/* Fondo general */
+body {
+  background: var(--bgColor);
+  font-family: var(--pFont);
+  color: var(--pColor);
 }
 
-/* Card */
-.team-card {
-  background: white;
+/* H1 (tu h1 está fuera del body en el HTML, igual lo estilamos) */
+h1 {
+  font-family: var(--h2Font);
+  color: var(--h2Color);
+  text-align: center;
+  margin: 1.25rem 0;
+  font-size: 2rem;
+  letter-spacing: 0.2px;
+}
+
+/* Margen superior para el grid */
+.row.row-cols-1.row-cols-md-3.g-4 {
+  margin: 1.8rem auto;
+  padding: 0 1rem;
+  max-width: 1200px;
+}
+
+/* Selector muy específico para sobrescribir Bootstrap por si el CSS se carga antes */
+.row.row-cols-1.row-cols-md-3.g-4 .col > .card.h-100 {
+  border: none;
   border-radius: 14px;
   overflow: hidden;
-  box-shadow: 0px 8px 28px rgba(0, 0, 0, 0.10);
-  transition: transform .25s ease, box-shadow .25s ease;
+  background: #ffffff;
+  box-shadow: 0 10px 30px rgba(16, 24, 40, 0.08);
+  transition: transform .28s cubic-bezier(.2,.9,.3,1), box-shadow .28s;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 /* Hover */
-.team-card:hover {
+.row.row-cols-1.row-cols-md-3.g-4 .col > .card.h-100:hover {
   transform: translateY(-6px);
-  box-shadow: 0 22px 40px rgba(0, 0, 0, 0.16);
+  box-shadow: 0 20px 45px rgba(16, 24, 40, 0.12);
 }
 
-/* Contenedor de imagen*/
-.team-card .photo {
-  width: 100%;
-  height: 290px;               
-  overflow: hidden;
-  background: #e8e8e8;
-}
-
-/* Imagen mismo tamaño */
-.team-card .photo img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;           
-  object-position: center;
+/* Imagen: forzamos tamaño uniforme y crop usando object-fit.
+   Usamos !important para asegurar que Bootstrap no lo sobrescriba cuando sea necesario. */
+.row.row-cols-1.row-cols-md-3.g-4 .col > .card.h-100 .card-img-top {
+  width: 100% !important;
+  height: 300px !important;           /* Ajusta este valor si quieres imágenes más altas */
+  object-fit: cover !important;
+  object-position: center !important;
+  display: block;
   transition: transform .6s ease;
 }
 
-/* Zoom suave */
-.team-card:hover .photo img {
-  transform: scale(1.08);
+/* Zoom suave de imagen al hover */
+.row.row-cols-1.row-cols-md-3.g-4 .col > .card.h-100:hover .card-img-top {
+  transform: scale(1.06);
 }
 
-/* Texto*/
-.team-card .content {
-  padding: 1.3rem 1.2rem 1.5rem;
+/* Cuerpo de la card: espaciado y que el contenido ocupe lo necesario */
+.row.row-cols-1.row-cols-md-3.g-4 .col > .card.h-100 .card-body {
+  padding: 1.15rem 1.15rem 1rem;
+  flex: 1 1 auto;
 }
 
-/* Nombre */
-.team-card .name {
-  font-family: var(--h2Font);
-  color: var(--titleMision);
-  font-size: 1.3rem;
-  font-weight: 600;
-  margin-bottom: 0.3rem;
+/* Título (nombre) */
+.row.row-cols-1.row-cols-md-3.g-4 .col > .card.h-100 .card-title {
+  font-family: var(--h2Font) !important;
+  color: var(--titleMision) !important;
+  font-size: 1.15rem !important;
+  font-weight: 600 !important;
+  margin-bottom: 0.35rem !important;
 }
 
-/* Puesto */
-.team-card .role {
-  font-family: var(--pFont);
-  color: var(--h2Color);
-  font-size: 1rem;
-  font-weight: 500;
-  margin-bottom: .9rem;
-  opacity: 0.9;
+/* Texto descriptivo */
+.row.row-cols-1.row-cols-md-3.g-4 .col > .card.h-100 .card-text {
+  font-family: var(--pFont) !important;
+  color: var(--pColor) !important;
+  font-size: 0.95rem !important;
+  line-height: 1.45 !important;
+  margin: 0;
 }
 
-/* Descripción / bio */
-.team-card .bio {
-  font-family: var(--pFont);
-  color: var(--pColor);
-  font-size: 0.95rem;
-  line-height: 1.5;
-  opacity: 0.95;
+/* Footer de la card */
+.row.row-cols-1.row-cols-md-3.g-4 .col > .card.h-100 .card-footer {
+  background: #fbfbfb !important;
+  border-top: none !important;
+  font-family: var(--pFont) !important;
+  font-size: 0.82rem !important;
+  color: var(--h2Color) !important;
+  padding: 0.7rem 1rem !important;
 }
 
+/* Pequeñas mejoras responsivas (si deseas ajustes finos) */
+@media (max-width: 992px) {
+  .row.row-cols-1.row-cols-md-3.g-4 .col > .card.h-100 .card-img-top {
+    height: 260px !important;
+  }
+}
+@media (max-width: 576px) {
+  .row.row-cols-1.row-cols-md-3.g-4 .col > .card.h-100 .card-img-top {
+    height: 200px !important;
+  }
+}
 
-
-
-
-
-
+/* Accesibilidad: foco visible para tarjetas si son enfocables */
+.row.row-cols-1.row-cols-md-3.g-4 .col > .card.h-100:focus-within,
+.row.row-cols-1.row-cols-md-3.g-4 .col > .card.h-100:focus {
+  outline: 3px solid rgba(180,110,76,0.12);
+  outline-offset: 4px;
+}
