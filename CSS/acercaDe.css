@@ -1,23 +1,25 @@
 /* Variables de estilo */
- 
+
+
 html {
     /* color de fondo y color de letra navBar */
     --bgColor: #F7F7F5;
     --bgnavBarColor: #2E2E2E;
+
     --navBarLogo: "Montserrat", "sans-serif";
 
-
     /* Quienes somos? */
-    --h2Color: #506078; 
+    --h2Color: #506078;
     --h2Font: "Poppins", "sans-serif";
- 
+
     /* Vision, mision, valores, titulos de bios. */
     --titleMision: #B46E4C;
-    
+
     /* parrafos */
     --pColor: Black;
     --pFont: "Inter", "sans-serif";
 }
+
 
 /*Yerania NavBar*/
 /*Texto del logotipo*/
@@ -49,12 +51,14 @@ html {
 
 /*/Yerania NavBar*/
 
+
 /*Tarjetas* Jess & Karen*/
 body {
-    background-color: var(--bgColor);
-    font-family: var(--h2Font),
     margin: 0;
     padding: 0;
+    background-color: var(--bgColor);
+    font-family: var(--h2Font),
+    
 }
 
 .titulo {
@@ -78,7 +82,7 @@ body {
 }
 
 .tarjeta img {
-    height: 260px;
+    height: 360px;
     object-fit: cover;
 }
 
@@ -91,10 +95,11 @@ body {
     font-weight: bold;
     font-size: 1.25rem;
     margin-bottom: 10px;
+    color: var(--bgColor)
 }
 
 .card-text {
-    color: #555;
+    color: var(--bgColor);
     font-size: 0.95rem;
 }
 
@@ -104,3 +109,48 @@ body {
 }
 
 /*Tarjetas Jess y Karen*/
+
+
+/* Eduardo y Adrian */
+
+h1.quienes {
+    color: var(--h2Color);
+    font: var(--h2Font);
+    font-size: 45px;
+    text-align: center;
+}
+
+h1.descripcion {
+    color: var(--h2Color);
+    font: var(--h2Font);
+    font-size: 40px;
+    background-color: var(--bgColor);
+}
+
+h2.descripcion {
+    text-align: center;
+}
+
+.descripcion {
+    background-color: var(--bgColor);
+    width: 27rem;
+}
+
+h2.banner {
+    color: var(--h2Color);
+    font: var(--h2Font);
+    font-size: 40px;
+    text-align: center;
+}
+
+.textobanner {
+    background-color: var(--pColor);
+}
+
+p.descripcion {
+    background-color: var(--bgColor);
+    color: var(--bgnavBarColor);
+    font-size: 17px;
+}
+
+/* / Eduardo y Adrian */
