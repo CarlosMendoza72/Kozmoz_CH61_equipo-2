@@ -27,7 +27,7 @@ html {
 
 /* Estilo para carrusel de empleados*/
 #carouselExampleCaptions {
-    max-width: 200px;
+    max-width: 900px;
     margin: 0 auto;
     border-radius: 18px;
     overflow: hidden;
