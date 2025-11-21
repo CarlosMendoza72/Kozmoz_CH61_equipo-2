@@ -5,6 +5,9 @@ html {
     --bgColor: #F7F7F5;
     --bgnavBarColor: #2E2E2E;
 
+
+    --navBarLogo: "Montserrat", "sans-serif";
+
     /* Quienes somos? */
     --h2Color: #506078;
     --h2Font: "Poppins", "sans-serif";
@@ -16,6 +19,96 @@ html {
     --pColor: Black;
     --pFont: "Inter", "sans-serif";
 }
+
+
+/*Yerania NavBar*/
+/*Texto del logotipo*/
+.logo-text {
+    font-family: var(--navBarLogo);
+    font-size: 1.8rem;
+    letter-spacing: 2px;
+    font-weight: 700;
+    color: var(--bgColor);
+}
+
+/* Ajustes de los enlaces del navbar */
+.navbar-nav .nav-link {
+    font-size: 0.95rem;
+    font-weight: 400;
+    transition: 0.3s ease;
+    color: var(--bgColor);
+}
+
+/*Efecto hover cuando el usuario pasa el mouse*/
+.navbar-nav .nav-link:hover {
+    color: var(--titleMision); 
+}
+
+/* Ajuste pequeño para separar un poco los enlaces del navBar */
+.nav-item {
+    margin-left: 10px;
+}
+
+/*/Yerania NavBar*/
+
+
+/*Tarjetas* Jess & Karen*/
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--bgColor);
+    font-family: var(--h2Font),
+    
+}
+
+.titulo {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--titleMision);
+}
+
+.tarjeta {
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+    transition: transform .2s ease-in-out, box-shadow .2s ease-in-out;
+}
+
+.tarjeta:hover {
+    transform: scale(1.04);
+    box-shadow: 0px 6px 18px rgba(0,0,0,0.2);
+}
+
+.tarjeta img {
+    height: 360px;
+    object-fit: cover;
+}
+
+.card-body {
+    background: #fff;
+    padding: 20px;
+}
+
+.card-title {
+    font-weight: bold;
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+    color: var(--bgColor)
+}
+
+.card-text {
+    color: var(--bgColor);
+    font-size: 0.95rem;
+}
+
+.card-body {
+    background: var(--bgnavBarColor);
+    padding: 20px;
+}
+
+/*Tarjetas Jess y Karen
 
 /* Eduardo y Adrian */
 
@@ -30,7 +123,7 @@ h1.descripcion {
     color: var(--h2Color);
     font: var(--h2Font);
     font-size: 40px;
-    background-color: white;
+    background-color: var(--bgColor);
 }
 
 h2.descripcion {
@@ -50,7 +143,13 @@ h2.banner {
 }
 
 .textobanner {
-    background-color: black;
+    background-color: var(--pColor);
+}
+
+p.descripcion {
+    background-color: var(--bgColor);
+    color: var(--bgnavBarColor);
+    font-size: 17px;
 }
 
 /* / Eduardo y Adrian */
