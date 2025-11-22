@@ -48,9 +48,75 @@ html {
 .nav-item {
     margin-left: 10px;
 }
-
 /*/Yerania NavBar*/
 
+/* Eduardo y Adrian */
+h1.quienes {
+    color: var(--h2Color);
+    font: var(--h2Font);
+    font-size: 45px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+h1.descripcion {
+    color: var(--h2Color);
+    font: var(--h2Font);
+    font-size: 40px;
+    background-color: var(--bgColor);
+}
+
+h2.descripcion {
+    text-align: center;
+}
+
+.descripcion {
+    background-color: var(--bgColor);
+    width: 27.8rem;
+    border-radius: 10px;
+}
+
+div.descripcion1 {
+    background-color: var(--bgColor);
+    width: 29.7rem;
+    border-radius: 10px;
+}
+
+img.descripcion1 {
+    width: 35rem;
+    height: 23rem;
+    border-radius: 10px;
+}
+
+.descripcionCard {
+    background-color: var(--bgColor);
+    width: 29.8rem;
+}
+
+ .descripcion1:hover {
+    transform: scale(1.01);
+    box-shadow: 0px 6px 18px rgba(0,0,0,0.2); 
+    transition: transform .2s ease-in-out, box-shadow .2s ease-in-out;
+}
+
+h2.banner {
+    color: var(--h2Color);
+    font: var(--h2Font);
+    font-size: 40px;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.textobanner {
+    background-color: var(--pColor);
+}
+
+p.descripcion {
+    background-color: var(--bgColor);
+    color: var(--bgnavBarColor);
+    font-size: 17px;
+}
+/* / Eduardo y Adrian */
 
 /*Tarjetas* Jess & Karen*/
 body {
@@ -108,56 +174,19 @@ body {
     padding: 20px;
 }
 
-/*Tarjetas Jess y Karen
-
-/* Eduardo y Adrian */
-
-h1.quienes {
-    color: var(--h2Color);
-    font: var(--h2Font);
-    font-size: 45px;
-    text-align: center;
+.specialCard {
+    width: 26rem;
+    margin: auto;
+    margin-top: 25px;
 }
+/* / Tarjetas Jess y Karen */
 
-h1.descripcion {
-    color: var(--h2Color);
-    font: var(--h2Font);
-    font-size: 40px;
-    background-color: var(--bgColor);
-}
-
-h2.descripcion {
-    text-align: center;
-}
-
-.descripcion {
-    background-color: var(--bgColor);
-    width: 27rem;
-}
-
-h2.banner {
-    color: var(--h2Color);
-    font: var(--h2Font);
-    font-size: 40px;
-    text-align: center;
-}
-
-.textobanner {
-    background-color: var(--pColor);
-}
-
-p.descripcion {
-    background-color: var(--bgColor);
-    color: var(--bgnavBarColor);
-    font-size: 17px;
-}
-
-/* / Eduardo y Adrian */
-
+/* Joe */
 footer{
     display: flex;
     justify-content: center;
     text-align: center;
     align-items: center;
-    
+    padding-top: 100px;
 }
+/* / Joe */
