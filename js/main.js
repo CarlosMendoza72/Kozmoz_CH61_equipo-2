@@ -13,7 +13,6 @@ if (formLucha) {
     if (!formLucha.checkValidity()) {
       formLucha.classList.add("was-validated");
     } else {
-
       // Datos del formulario
       const datosFormulario = {
         tipoCliente: document.getElementById("tipoCliente").value,
@@ -23,10 +22,10 @@ if (formLucha) {
         fecha: new Date().toLocaleString(),
       };
 
-      //  Imprimir en consola
+      // Imprimir en consola
       console.log("Formulario enviado:", datosFormulario);
 
-      //  Mostrar éxito y limpiar
+      // Mostrar éxito y limpiar
       formLucha.classList.remove("was-validated");
       mensajeExito.classList.remove("d-none");
       formLucha.reset();
@@ -36,11 +35,13 @@ if (formLucha) {
       }, 3000);
     }
   });
+}
+
 
 const accordion = document.getElementsByClassName('container');
 
-for (i=0; i<accordion.length; i++) {
+for (let i=0; i<accordion.length; i++) {
   accordion[i].addEventListener('click', function () {
     this.classList.toggle('active')
-  })
+  });
 }
