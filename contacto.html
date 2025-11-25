@@ -13,15 +13,9 @@
 </head>
 
 <body>
-    <h1>Contáctanos</h1>
+    <h1 class="contacto">Contáctanos</h1>
 
-            <span class="carousel-control-next-icon"></span>
-          </button>
-        </div>
-      </div>
-    </section>
-    <section id="contacto" class="py-5 bg-black text-light">
-      <div class="container">
+      <div class="container contacto">
         <h2 class="text-center mb-3">
           Dudas, aclaraciones y sugerencias
         </h2>
@@ -34,24 +28,44 @@
           <div class="col-md-7">
             <form id="formLucha" novalidate>
               <div class="mb-3">
-                <label class="form-label">Tipo de cliente</label>
+                <label class="form-label">Tipo de usuario</label>
                 <select id="tipoCliente" class="form-select" required>
                   <option value="">Selecciona una opción</option>
-                  <option value="luchador">T</option>
-                  <option value="promotor">Promotor / Arena / Gimnasio</option>
-                  <option value="fan">Fan de la lucha libre</option>
-                  <option value="tienda">Tienda / Distribuidor</option>
+                  <option value="luchador">1</option>
+                  <option value="promotor">2</option>
+                  <option value="fan">3</option>
+                  <option value="tienda">4</option>
                 </select>
                 <div class="invalid-feedback">Selecciona una opción.</div>
               </div>
 
               <div class="mb-3">
                 <label for="nombre" class="form-label"
-                  >Nombre o nombre artístico</label
+                  >Nombre (s)</label
                 >
                 <input type="text" id="nombre" class="form-control" required />
                 <div class="invalid-feedback">
-                  Ingresa tu nombre o nombre artístico.
+                  Ingresa tu nombre.
+                </div>
+              </div>
+
+              <div class="mb-3">
+                <label for="nombre" class="form-label"
+                  >Apellido paterno</label
+                >
+                <input type="text" id="nombre" class="form-control" required />
+                <div class="invalid-feedback">
+                  Ingresa tu apellido paterno.
+                </div>
+              </div>
+
+               <div class="mb-3">
+                <label for="nombre" class="form-label"
+                  >Apellido materno</label
+                >
+                <input type="text" id="nombre" class="form-control" required />
+                <div class="invalid-feedback">
+                  Ingresa tu apellido materno.
                 </div>
               </div>
 
@@ -63,7 +77,7 @@
 
               <div class="mb-3">
                 <label for="mensaje" class="form-label"
-                  >Detalles del pedido</label
+                  >Especifica duda, aclaración o sugerencia</label
                 >
                 <textarea
                   id="mensaje"
@@ -76,11 +90,11 @@
               </div>
 
               <button type="submit" class="btn w-100 fw-bold" id="btnEnviar">
-                Enviar cotización
+                Enviar mensaje
               </button>
 
               <p id="mensajeExito" class="mt-3 text-center d-none">
-                🥊 ¡Gracias! Te contactaremos pronto.
+                ¡Gracias! Te contactaremos pronto.
               </p>
             </form>
           </div>
