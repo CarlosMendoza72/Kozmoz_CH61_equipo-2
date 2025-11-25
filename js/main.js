@@ -1,5 +1,17 @@
 
-// Contactos
+// Acerca de nosotros ============================================================
+
+const accordion = document.getElementsByClassName('container');
+
+for (let i=0; i<accordion.length; i++) {
+  accordion[i].addEventListener('click', function () {
+    this.classList.toggle('active')
+  });
+}
+
+// Acerca de nosotros ============================================================
+
+// Contactos ============================================================
 console.log("Hola");
 
 // Validación formulario
@@ -37,11 +49,6 @@ if (formLucha) {
   });
 }
 
+// Contactos ============================================================
 
-const accordion = document.getElementsByClassName('container');
 
-for (let i=0; i<accordion.length; i++) {
-  accordion[i].addEventListener('click', function () {
-    this.classList.toggle('active')
-  });
-}
