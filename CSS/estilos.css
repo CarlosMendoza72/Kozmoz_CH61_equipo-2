@@ -20,6 +20,13 @@ html {
     --pFont: "Inter", "sans-serif";
 }
 
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--bgColor) !important;
+    font-family: var(--h2Font);
+}
+/* ===========================acerca de nosotr@s========================= */
 
 /*Yerania NavBar*/
 /*Texto del logotipo*/
@@ -33,6 +40,7 @@ html {
 
 /* Ajustes de los enlaces del navbar */
 .navbar-nav .nav-link {
+    font-family: var(--navBarLogo);
     font-size: 0.95rem;
     font-weight: 400;
     transition: 0.3s ease;
@@ -51,9 +59,9 @@ html {
 /*/Yerania NavBar*/
 
 /* Eduardo y Adrian */
-h1.quienes {
+h1.title-Us {
     color: var(--h2Color);
-    font: var(--h2Font);
+    font-family: var(--h2Font);
     font-size: 45px;
     text-align: center;
     margin-top: 20px;
@@ -61,7 +69,7 @@ h1.quienes {
 
 h1.descripcion {
     color: var(--h2Color);
-    font: var(--h2Font);
+    font-family: var(--h2Font);
     font-size: 40px;
     background-color: var(--bgColor);
 }
@@ -101,31 +109,27 @@ img.descripcion1 {
 
 h2.banner {
     color: var(--h2Color);
-    font: var(--h2Font);
+    font-family: var(--h2Font);
     font-size: 40px;
     text-align: center;
     margin-top: 50px;
 }
 
-.textobanner {
-    background-color: var(--pColor);
+.card-textobanner {
+    background-color: var(--bgColor);
+    font-family: var(--pFont);
 }
 
 p.descripcion {
     background-color: var(--bgColor);
     color: var(--bgnavBarColor);
-    font-size: 17px;
+    font-family: var(--pFont);
+    font-size: 17.5px;
 }
 /* / Eduardo y Adrian */
 
 /*Tarjetas* Jess & Karen*/
-body {
-    margin: 0;
-    padding: 0;
-    background-color: var(--bgColor);
-    font-family: var(--h2Font),
-    
-}
+
 
 .titulo {
     text-align: center;
@@ -136,7 +140,7 @@ body {
 }
 
 .tarjeta {
-    border-radius: 15px;
+    border-radius: 15px !important;
     overflow: hidden;
     box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
     transition: transform .2s ease-in-out, box-shadow .2s ease-in-out;
@@ -153,20 +157,22 @@ body {
 }
 
 .card-body {
-    background: #fff;
+    background: var(--bgColor);
     padding: 20px;
 }
 
-.card-title {
+h5.card-title {
+    color: var(--bgColor);
     font-weight: bold;
     font-size: 1.25rem;
     margin-bottom: 10px;
-    color: var(--bgColor)
+    font-family: var(--h2Font);
 }
 
-.card-text {
+p.card-text {
     color: var(--bgColor);
     font-size: 0.95rem;
+    font-family: var(--pFont);
 }
 
 .card-body {
@@ -189,4 +195,7 @@ footer{
     align-items: center;
     padding-top: 100px;
 }
-/* / Joe */
+/* / Joe, ta mogger el Joe */
+
+/* ===========================Contáctanos================================ */
+/* solo se agregan estilos que no estén ya en acercaDe */
