@@ -1,0 +1,201 @@
+/* Variables de estilo */
+
+html {
+    /* color de fondo y color de letra navBar */
+    --bgColor: #F7F7F5;
+    --bgnavBarColor: #2E2E2E;
+
+
+    --navBarLogo: "Montserrat", "sans-serif";
+
+    /* Quienes somos? */
+    --h2Color: #506078;
+    --h2Font: "Poppins", "sans-serif";
+
+    /* Vision, mision, valores, titulos de bios. */
+    --titleMision: #B46E4C;
+
+    /* parrafos */
+    --pColor: Black;
+    --pFont: "Inter", "sans-serif";
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--bgColor) !important;
+    font-family: var(--h2Font);
+}
+/* ===========================acerca de nosotr@s========================= */
+
+/*Yerania NavBar*/
+/*Texto del logotipo*/
+.logo-text {
+    font-family: var(--navBarLogo);
+    font-size: 1.8rem;
+    letter-spacing: 2px;
+    font-weight: 700;
+    color: var(--bgColor);
+}
+
+/* Ajustes de los enlaces del navbar */
+.navbar-nav .nav-link {
+    font-family: var(--navBarLogo);
+    font-size: 0.95rem;
+    font-weight: 400;
+    transition: 0.3s ease;
+    color: var(--bgColor);
+}
+
+/*Efecto hover cuando el usuario pasa el mouse*/
+.navbar-nav .nav-link:hover {
+    color: var(--titleMision); 
+}
+
+/* Ajuste pequeño para separar un poco los enlaces del navBar */
+.nav-item {
+    margin-left: 10px;
+}
+/*/Yerania NavBar*/
+
+/* Eduardo y Adrian */
+h1.title-Us {
+    color: var(--h2Color);
+    font-family: var(--h2Font);
+    font-size: 45px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+h1.descripcion {
+    color: var(--h2Color);
+    font-family: var(--h2Font);
+    font-size: 40px;
+    background-color: var(--bgColor);
+}
+
+h2.descripcion {
+    text-align: center;
+}
+
+.descripcion {
+    background-color: var(--bgColor);
+    width: 27.8rem;
+    border-radius: 10px;
+}
+
+div.descripcion1 {
+    background-color: var(--bgColor);
+    width: 29.7rem;
+    border-radius: 10px;
+}
+
+img.descripcion1 {
+    width: 35rem;
+    height: 23rem;
+    border-radius: 10px;
+}
+
+.descripcionCard {
+    background-color: var(--bgColor);
+    width: 29.8rem;
+}
+
+ .descripcion1:hover {
+    transform: scale(1.01);
+    box-shadow: 0px 6px 18px rgba(0,0,0,0.2); 
+    transition: transform .2s ease-in-out, box-shadow .2s ease-in-out;
+}
+
+h2.banner {
+    color: var(--h2Color);
+    font-family: var(--h2Font);
+    font-size: 40px;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.card-textobanner {
+    background-color: var(--bgColor);
+    font-family: var(--pFont);
+}
+
+p.descripcion {
+    background-color: var(--bgColor);
+    color: var(--bgnavBarColor);
+    font-family: var(--pFont);
+    font-size: 17.5px;
+}
+/* / Eduardo y Adrian */
+
+/*Tarjetas* Jess & Karen*/
+
+
+.titulo {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--titleMision);
+}
+
+.tarjeta {
+    border-radius: 15px !important;
+    overflow: hidden;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+    transition: transform .2s ease-in-out, box-shadow .2s ease-in-out;
+}
+
+.tarjeta:hover {
+    transform: scale(1.04);
+    box-shadow: 0px 6px 18px rgba(0,0,0,0.2);
+}
+
+.tarjeta img {
+    height: 360px;
+    object-fit: cover;
+}
+
+.card-body {
+    background: var(--bgColor);
+    padding: 20px;
+}
+
+h5.card-title {
+    color: var(--bgColor);
+    font-weight: bold;
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+    font-family: var(--h2Font);
+}
+
+p.card-text {
+    color: var(--bgColor);
+    font-size: 0.95rem;
+    font-family: var(--pFont);
+}
+
+.card-body {
+    background: var(--bgnavBarColor);
+    padding: 20px;
+}
+
+.specialCard {
+    width: 26rem;
+    margin: auto;
+    margin-top: 25px;
+}
+/* / Tarjetas Jess y Karen */
+
+/* Joe */
+footer{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    padding-top: 100px;
+}
+/* / Joe, ta mogger el Joe */
+
+/* ===========================Contáctanos================================ */
+/* solo se agregan estilos que no estén ya en acercaDe */
