@@ -4,13 +4,11 @@ html {
     /* color de fondo y color de letra navBar */
     --bgColor: #F7F7F5;
     --bgnavBarColor: #2E2E2E;
-
-
     --navBarLogo: "Montserrat", "sans-serif";
 
     /* Quienes somos? */
     --h2Color: #506078;
-    --h2Font: "Poppins", "sans-serif";
+    --h2Font: "Stack Sans Headline", "sans-serif"; /*Poppins
 
     /* Vision, mision, valores, titulos de bios. */
     --titleMision: #B46E4C;
@@ -118,18 +116,20 @@ h2.banner {
 .card-textobanner {
     background-color: var(--bgColor);
     font-family: var(--pFont);
+    font-size: 25px;
+    text-align: justify;
 }
 
 p.descripcion {
     background-color: var(--bgColor);
     color: var(--bgnavBarColor);
     font-family: var(--pFont);
-    font-size: 17.5px;
+    font-size: 22px;
+    text-align: justify;
 }
 /* / Eduardo y Adrian */
 
 /*Tarjetas* Jess & Karen*/
-
 
 .titulo {
     text-align: center;
@@ -185,6 +185,15 @@ p.card-text {
     margin: auto;
     margin-top: 25px;
 }
+
+#cardCustom{
+    margin: center;
+    font-family: var(--pFont);
+    border-radius: 350px !important;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+    transition: transform .2s ease-in-out, box-shadow .2s ease-in-out;
+}
+
 /* / Tarjetas Jess y Karen */
 
 /* Joe */
