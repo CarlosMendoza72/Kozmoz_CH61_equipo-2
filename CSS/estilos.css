@@ -195,6 +195,12 @@ footer{
     align-items: center;
     padding-top: 100px;
 }
+
+.nav-link {
+    color: var(--bgColor) !important;
+    font-family: var(--navBarLogo);
+}
+
 /* / Joe, ta mogger el Joe */
 
 /* ===========================Contáctanos================================ */
