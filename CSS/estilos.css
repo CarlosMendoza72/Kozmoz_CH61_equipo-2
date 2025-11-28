@@ -4,13 +4,11 @@ html {
     /* color de fondo y color de letra navBar */
     --bgColor: #F7F7F5;
     --bgnavBarColor: #2E2E2E;
-
-
     --navBarLogo: "Montserrat", "sans-serif";
 
     /* Quienes somos? */
     --h2Color: #506078;
-    --h2Font: "Poppins", "sans-serif";
+    --h2Font: "Stack Sans Headline", "sans-serif"; /*Poppins
 
     /* Vision, mision, valores, titulos de bios. */
     --titleMision: #B46E4C;
@@ -26,6 +24,7 @@ body {
     background-color: var(--bgColor) !important;
     font-family: var(--h2Font);
 }
+
 /* ===========================acerca de nosotr@s========================= */
 
 /*Yerania NavBar*/
@@ -49,13 +48,14 @@ body {
 
 /*Efecto hover cuando el usuario pasa el mouse*/
 .navbar-nav .nav-link:hover {
-    color: var(--titleMision); 
+    color: var(--titleMision);
 }
 
 /* Ajuste pequeño para separar un poco los enlaces del navBar */
 .nav-item {
     margin-left: 10px;
 }
+
 /*/Yerania NavBar*/
 
 /* Eduardo y Adrian */
@@ -101,9 +101,9 @@ img.descripcion1 {
     width: 29.8rem;
 }
 
- .descripcion1:hover {
+.descripcion1:hover {
     transform: scale(1.01);
-    box-shadow: 0px 6px 18px rgba(0,0,0,0.2); 
+    box-shadow: 0px 6px 18px rgba(0, 0, 0, 0.2);
     transition: transform .2s ease-in-out, box-shadow .2s ease-in-out;
 }
 
@@ -118,18 +118,21 @@ h2.banner {
 .card-textobanner {
     background-color: var(--bgColor);
     font-family: var(--pFont);
+    font-size: 25px;
+    text-align: justify;
 }
 
 p.descripcion {
     background-color: var(--bgColor);
     color: var(--bgnavBarColor);
     font-family: var(--pFont);
-    font-size: 17.5px;
+    font-size: 22px;
+    text-align: justify;
 }
+
 /* / Eduardo y Adrian */
 
 /*Tarjetas* Jess & Karen*/
-
 
 .titulo {
     text-align: center;
@@ -142,13 +145,13 @@ p.descripcion {
 .tarjeta {
     border-radius: 15px !important;
     overflow: hidden;
-    box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
     transition: transform .2s ease-in-out, box-shadow .2s ease-in-out;
 }
 
 .tarjeta:hover {
     transform: scale(1.04);
-    box-shadow: 0px 6px 18px rgba(0,0,0,0.2);
+    box-shadow: 0px 6px 18px rgba(0, 0, 0, 0.2);
 }
 
 .tarjeta img {
@@ -185,10 +188,19 @@ p.card-text {
     margin: auto;
     margin-top: 25px;
 }
+
+#cardCustom{
+    margin: center;
+    font-family: var(--pFont);
+    border-radius: 350px !important;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+    transition: transform .2s ease-in-out, box-shadow .2s ease-in-out;
+}
+
 /* / Tarjetas Jess y Karen */
 
 /* Joe */
-footer{
+footer {
     display: flex;
     justify-content: center;
     text-align: center;
@@ -196,12 +208,127 @@ footer{
     padding-top: 100px;
 }
 
-.nav-link {
-    color: var(--bgColor) !important;
-    font-family: var(--navBarLogo);
+/* / Joe, ta mogger el Joe */
+/* @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap'); */
+
+.accordion {
+    width: 1000px;
+    margin: 90px auto;
+    color: black;
+    background-color: white;
+    padding: 45px 45px;
 }
 
-/* / Joe, ta mogger el Joe */
+.accordion .container {
+    position: relative;
+    margin: 10px 10px;
+}
+
+.accordion .label {
+    position: relative;
+    padding: 10px 0;
+    font-size: 30px;
+    color: black;
+    cursor: pointer;
+}
+
+.accordion .label::before {
+    content: '+';
+    color: black;
+    position: absolute;
+    top: 50%;
+    right: -5px;
+    font-size: 30px;
+    transform: translateY(-50%);
+}
+
+.accordion .content {
+    position: relative;
+    background: white;
+    height: 0;
+    font-size: 20px;
+    text-align: justify;
+    width: 780px;
+    overflow: hidden;
+    transition: 0.5s;
+}
+
+.accordion hr {
+    width: 100;
+    margin-left: 0;
+    border: 1px solid grey;
+}
+
+.accordion .container.active .content {
+    height: 150px;
+}
+
+.accordion .container.active .label::before {
+    content: '-';
+    font-size: 30px;
+}
+
+
+/*Carlos y Ricardo*/
 
 /* ===========================Contáctanos================================ */
 /* solo se agregan estilos que no estén ya en acercaDe */
+
+.contacto {
+    padding-top: 20px;
+    text-align: center;
+    font-family: var(--h2Font);
+    color: var(--h2Color);
+}
+
+p.contacto {
+    font-family: var(--pFont);
+    color: var(--pColor);
+    font-size: 20px;
+    text-align: center;
+}
+
+label.contacto {
+    font-size: 20px;
+    text-align: center;
+}
+
+input.contacto,
+label.contacto,
+select option.contacto, selected option.contacto {
+    width: 750px;
+    /* Ancho */
+    height: 50px;
+    /* Alto */
+    font-size: 20px;
+    /* Tamaño del texto */
+    padding: 8px;
+    /* Espacio interno */
+    border-radius: 8px;
+}
+
+input.contacto {
+    border: 1px solid #ccc;
+    transition: box-shadow 0.3s ease;
+}
+
+textarea.contacto {
+    width: 750px;
+    /* Ancho */
+    height: 150px;
+    /* Alto */
+    font-size: 20px;
+    /* Tamaño del texto */
+    padding: 8px;
+    /* Espacio interno */
+    border-radius: 8px;
+}
+
+.contacto-boton {
+    color: var(--bgColor);
+    width: 200px;
+    height: 50px;
+    font-size: 20px;
+    background-color: var(--titleMision);
+    border: 1px #B46E4C !important;
+}
