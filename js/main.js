@@ -1,54 +1,86 @@
-
-// Acerca de nosotros ============================================================
-
+// Acerca de nosotros =================================================
+// Acordeon
 const accordion = document.getElementsByClassName('container');
 
-for (let i=0; i<accordion.length; i++) {
+for (let i = 0; i < accordion.length; i++) {
   accordion[i].addEventListener('click', function () {
-    this.classList.toggle('active')
+    this.classList.toggle('active');
   });
 }
+// Acerca de nosotros =================================================
 
-// Acerca de nosotros ============================================================
+// Contacto ===========================================================
 
-// Contactos ============================================================
-console.log("Hola");
 
-// Validación formulario
-const formLucha = document.getElementById("formLucha");
+// Inicializar EmailJS
+const formContacto = document.getElementById("formContacto");
 const mensajeExito = document.getElementById("mensajeExito");
 
-if (formLucha) {
-  formLucha.addEventListener("submit", function (event) {
+if (formContacto) {
+  formContacto.addEventListener("submit", function (event) {
     event.preventDefault();
 
-    if (!formLucha.checkValidity()) {
-      formLucha.classList.add("was-validated");
-    } else {
-      // Datos del formulario
-      const datosFormulario = {
-        tipoCliente: document.getElementById("tipoCliente").value,
-        nombre: document.getElementById("nombre").value,
-        email: document.getElementById("email").value,
-        mensaje: document.getElementById("mensaje").value,
-        fecha: new Date().toLocaleString(),
-      };
+    let esValido = true;
 
-      // Imprimir en consola
-      console.log("Formulario enviado:", datosFormulario);
+    // Regex
+    const regexNombre = /^[A-Za-zÁÉÍÓÚáéíóúÑñ\s]+$/;
+    const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-      // Mostrar éxito y limpiar
-      formLucha.classList.remove("was-validated");
-      mensajeExito.classList.remove("d-none");
-      formLucha.reset();
+    // Inputs
+    const nombre = document.getElementById("nombre");
+    const apellidoPat = document.getElementById("apellidoPat");
+    const apellidoMat = document.getElementById("apellidoMat");
+    const email = document.getElementById("email");
+    const mensaje = document.getElementById("mensaje");
 
-      setTimeout(() => {
-        mensajeExito.classList.add("d-none");
-      }, 3000);
+    // Validaciones
+    if (!regexNombre.test(nombre.value.trim())) {
+      nombre.classList.add("is-invalid");
+      esValido = false;
+    } else nombre.classList.remove("is-invalid");
+
+    if (!regexNombre.test(apellidoPat.value.trim())) {
+      apellidoPat.classList.add("is-invalid");
+      esValido = false;
+    } else apellidoPat.classList.remove("is-invalid");
+
+    if (!regexNombre.test(apellidoMat.value.trim())) {
+      apellidoMat.classList.add("is-invalid");
+      esValido = false;
+    } else apellidoMat.classList.remove("is-invalid");
+
+    if (!regexEmail.test(email.value.trim())) {
+      email.classList.add("is-invalid");
+      esValido = false;
+    } else email.classList.remove("is-invalid");
+
+    if (mensaje.value.trim().length < 5) {
+      mensaje.classList.add("is-invalid");
+      esValido = false;
+    } else mensaje.classList.remove("is-invalid");
+
+    // Mostrar validación Bootstrap
+    formContacto.classList.add("was-validated");
+
+    if (!esValido) {
+      console.log("Formulario inválido");
+      return;
     }
+
+
+    // enviar emails
+    emailjs.sendForm("service_73k6p3n", "template_47amrzc", this)
+      .then(() => {
+        mensajeExito.classList.remove("d-none");
+        formContacto.reset();
+        formContacto.classList.remove("was-validated");
+
+        setTimeout(() => {
+          mensajeExito.classList.add("d-none");
+        }, 3000);
+      })
+      .catch((error) => {
+        alert("Error al enviar: " + JSON.stringify(error));
+      });
   });
 }
-
-// Contactos ============================================================
-
-
