@@ -320,3 +320,12 @@ textarea.contacto {
     border: 1px #B46E4C !important;
     margin-bottom: 8rem;
 }
+
+
+#background1 {background: linear-gradient(to right,
+  #2E2E2E,
+  #F7F7F5,
+  #E5D8C4,
+  #506078,
+  #B46E4C)
+}
