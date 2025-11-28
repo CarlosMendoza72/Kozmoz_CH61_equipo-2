@@ -59,7 +59,7 @@ body {
 /*/Yerania NavBar*/
 
 /* Eduardo y Adrian */
-h1.title-Us {
+h1.title-Us, h1.contacto {
     color: var(--h2Color);
     font-family: var(--h2Font);
     font-size: 45px;
@@ -208,8 +208,7 @@ footer {
     padding-top: 100px;
 }
 
-/* / Joe, ta mogger el Joe */
-/* @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap'); */
+/* / Joe */
 
 .accordion {
     width: 1000px;
@@ -267,7 +266,6 @@ footer {
     content: '-';
     font-size: 30px;
 }
-
 
 /*Carlos y Ricardo*/
 
