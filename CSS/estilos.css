@@ -25,41 +25,37 @@ body {
     font-family: var(--h2Font);
 }
 
-/* ===========================acerca de nosotr@s========================= */
+/* ========================= acerca de nosotr@s========================= */
 
-/*Yerania NavBar*/
+/*NavBar*/
 /*Texto del logotipo*/
 .logo-text {
-    font-family: var(--navBarLogo);
-    font-size: 1.8rem;
+    font-family: var(--h2Font);
+    font-size: 2rem !important;
     letter-spacing: 2px;
-    font-weight: 700;
-    color: var(--bgColor);
+    font-weight: 400;
+    color: var(--bgColor) !important;
 }
-
 /* Ajustes de los enlaces del navbar */
 .navbar-nav .nav-link {
-    font-family: var(--navBarLogo);
+    font-family: var(--h2Font);
     font-size: 0.95rem;
     font-weight: 400;
     transition: 0.3s ease;
     color: var(--bgColor);
 }
-
 /*Efecto hover cuando el usuario pasa el mouse*/
 .navbar-nav .nav-link:hover {
     color: var(--titleMision);
 }
-
 /* Ajuste pequeño para separar un poco los enlaces del navBar */
 .nav-item {
     margin-left: 10px;
 }
 
-/*/Yerania NavBar*/
+/* Quienes somos */
 
-/* Eduardo y Adrian */
-h1.title-Us, h1.contacto {
+h1, h1.title-Us, h1.contacto {
     color: var(--h2Color);
     font-family: var(--h2Font);
     font-size: 45px;
@@ -130,9 +126,7 @@ p.descripcion {
     text-align: justify;
 }
 
-/* / Eduardo y Adrian */
-
-/*Tarjetas* Jess & Karen*/
+/*Biografías*/
 
 .titulo {
     text-align: center;
@@ -190,18 +184,39 @@ p.card-text {
 }
 
 
-/* / Tarjetas Jess y Karen */
+/* Footer */
 
-/* Joe */
-footer {
+/* footer {
     display: flex;
     justify-content: center;
     text-align: center;
     align-items: center;
     padding-top: 100px;
-}
+} */
 
-/* / Joe */
+    footer {
+        display: flex;
+        flex-direction: column;  /* Apila iconos arriba, texto abajo */
+        align-items: center;     /* CENTRA TODO */
+        gap: 15px;               /* Separación vertical */
+        padding: 20px 0;
+    }
+
+    .footer-icon-row {
+        display: flex;              
+        gap: 25px;                  
+        justify-content: center;    
+        width: 100%;
+        text-decoration:none;
+    }
+
+    a.bottom {
+        text-decoration: none;
+        font-size: 16px;
+        color: black;
+    }
+
+/* Mision, vision y valores */
 
 .accordion {
     width: 1000px;
@@ -260,10 +275,7 @@ footer {
     font-size: 30px;
 }
 
-/*Carlos y Ricardo*/
-
-/* ===========================Contáctanos================================ */
-/* solo se agregan estilos que no estén ya en acercaDe */
+/* ========================== Contáctanos ============================== */
 
 .contacto {
     padding-top: 20px;
@@ -288,13 +300,9 @@ input.contacto,
 label.contacto,
 select option.contacto, selected option.contacto {
     width: 750px;
-    /* Ancho */
     height: 50px;
-    /* Alto */
     font-size: 20px;
-    /* Tamaño del texto */
     padding: 8px;
-    /* Espacio interno */
     border-radius: 8px;
 }
 
@@ -305,13 +313,9 @@ input.contacto {
 
 textarea.contacto {
     width: 750px;
-    /* Ancho */
     height: 150px;
-    /* Alto */
     font-size: 20px;
-    /* Tamaño del texto */
     padding: 8px;
-    /* Espacio interno */
     border-radius: 8px;
 }
 
@@ -322,4 +326,5 @@ textarea.contacto {
     font-size: 20px;
     background-color: var(--titleMision);
     border: 1px #B46E4C !important;
+    margin-bottom: 8rem;
 }
