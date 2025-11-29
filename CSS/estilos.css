@@ -30,16 +30,16 @@ body {
 /*Yerania NavBar*/
 /*Texto del logotipo*/
 .logo-text {
-    font-family: var(--navBarLogo);
-    font-size: 1.8rem;
+    font-family: var(--h2Font);
+    font-size: 2rem !important;
     letter-spacing: 2px;
-    font-weight: 700;
-    color: var(--bgColor);
+    font-weight: 400;
+    color: var(--bgColor) !important;
 }
 
 /* Ajustes de los enlaces del navbar */
 .navbar-nav .nav-link {
-    font-family: var(--navBarLogo);
+    font-family: var(--h2Font);
     font-size: 0.95rem;
     font-weight: 400;
     transition: 0.3s ease;
