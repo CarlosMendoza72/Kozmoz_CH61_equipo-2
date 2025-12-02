@@ -186,18 +186,10 @@ p.card-text {
 
 /* Footer */
 
-/* footer {
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    align-items: center;
-    padding-top: 100px;
-} */
-
     footer {
         display: flex;
         flex-direction: column;  /* Apila iconos arriba, texto abajo */
-        align-items: center;     /* CENTRA TODO */
+        align-items: center;     /* para centrar todo */
         gap: 15px;               /* Separación vertical */
         padding: 20px 0;
     }
