@@ -1,1 +1,16 @@
+<<<<<<< HEAD
 .DS_Store
+=======
+#macOS
+.DS_Store
+
+#VSCode
+.vscode/
+
+#Node / common (opcional)
+node_modules/
+dist/
+
+#sistema
+Thumbs.db
+>>>>>>> 5e31892 (Add .gitignore, .gitattributes; remove system/editor files from tracking)
