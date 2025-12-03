@@ -29,6 +29,19 @@ html {
     --footerBtnText: #F7F7F5;     
 
 
+
+    /*Footer pagina principal*/
+    --footerBg: #2E2E2E;          
+    --footerText: #F7F7F5;        
+    --footerLink: #E5D8C4;       
+    --footerLinkHover: #B46E4C;   
+    --footerTitle: #E5D8C4;       
+    --footerInputBg: #F7F7F5;    
+    --footerInputText: #2E2E2E;   
+    --footerBtnBg: #B46E4C;      
+    --footerBtnText: #F7F7F5;     
+
+
 }
 
 body {
@@ -39,18 +52,25 @@ body {
 }
 
 /* ========================= acerca de nosotr@s========================= */
+/* ========================= acerca de nosotr@s========================= */
 
+/*NavBar*/
 /*NavBar*/
 /*Texto del logotipo*/
 .logo-text {
     font-family: var(--h2Font);
     font-size: 2rem !important;
+    font-family: var(--h2Font);
+    font-size: 2rem !important;
     letter-spacing: 2px;
+    font-weight: 400;
+    color: var(--bgColor) !important;
     font-weight: 400;
     color: var(--bgColor) !important;
 }
 /* Ajustes de los enlaces del navbar */
 .navbar-nav .nav-link {
+    font-family: var(--h2Font);
     font-family: var(--h2Font);
     font-size: 0.95rem;
     font-weight: 400;
@@ -67,7 +87,9 @@ body {
 }
 
 /* Quienes somos */
+/* Quienes somos */
 
+h1, h1.title-Us, h1.contacto {
 h1, h1.title-Us, h1.contacto {
     color: var(--h2Color);
     font-family: var(--h2Font);
@@ -140,6 +162,7 @@ p.descripcion {
 }
 
 /*Biografías*/
+/*Biografías*/
 
 .titulo {
     text-align: center;
@@ -198,6 +221,7 @@ p.card-text {
 
 
 /* Footer */
+/* Footer */
 
     footer {
         display: flex;
@@ -220,7 +244,29 @@ p.card-text {
         font-size: 16px;
         color: black;
     }
+    footer {
+        display: flex;
+        flex-direction: column;  /* Apila iconos arriba, texto abajo */
+        align-items: center;     /* para centrar todo */
+        gap: 15px;               /* Separación vertical */
+        padding: 20px 0;
+    }
 
+    .footer-icon-row {
+        display: flex;              
+        gap: 25px;                  
+        justify-content: center;    
+        width: 100%;
+        text-decoration:none;
+    }
+
+    a.bottom {
+        text-decoration: none;
+        font-size: 16px;
+        color: black;
+    }
+
+/* Mision, vision y valores */
 /* Mision, vision y valores */
 
 .accordion {
@@ -280,6 +326,7 @@ p.card-text {
     font-size: 30px;
 }
 
+/* ========================== Contáctanos ============================== */
 /* ========================== Contáctanos ============================== */
 
 .contacto {
@@ -469,5 +516,4 @@ textarea.contacto {
 }
 
  /* Productos =========================================================== */
-
- 
+}

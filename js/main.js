@@ -181,3 +181,29 @@ const principiosAstrofisica = new Libro(
   "Ofertas",
   "disponible"
 )
+
+// --- 1. TECNOLOGÍA (Jessica) ---
+
+const elMitoDeSeguridad = new libro 
+(
+         40,
+        "El Mito de la Seguridad: Construyendo Sistemas Robustos",
+        "Bruce Schneier",
+        "Wiley",
+        "Un análisis profundo sobre los principios de la seguridad informática y cómo diseñar sistemas resilientes en un mundo digital.",
+        "Tecnología",
+        "Inglés",
+        432,
+        2000,
+        "Digital",
+        "Edición Revisada",
+        500,
+        19.99,
+        0.00,
+        4.5,
+        890,
+        "./assets/",
+        ["Ciberseguridad, Criptografía, Redes"],
+        "Recomendado",
+        "Disponible"
+);
