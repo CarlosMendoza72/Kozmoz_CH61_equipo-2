@@ -334,14 +334,27 @@ textarea.contacto {
     margin-bottom: 8rem;
 }
 
-/*Carlos y Karen */
-
-#background1 {background: linear-gradient(to right,
+.miCaja {
+  width: auto;
+  height: 500px;
+  background: linear-gradient(to right,
   #2E2E2E,
   #F7F7F5,
   #E5D8C4,
   #506078,
-  #B46E4C)
+  #B46E4C);
+  padding: 10px; 
+  margin: 20px;
+}
+
+.titulo{
+    color: black;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center; 
+  align-items: center;   
 }
 
 /* ===================== Footer Kozmoz ===================== */
