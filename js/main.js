@@ -245,6 +245,62 @@ class Libro {
   }
 };
 
+
+
+class Libro {
+
+  // Variables | Constantes
+  id = 0;
+  titulo = "";
+  autor = "";
+  editorial = "";
+  descripcion = "";
+  genero = "";
+  idioma = "";
+  numeroPaginas = 0;
+  añoPublicacion = 0;
+  formato = "";    // físico o digital
+  edicion = "";
+  stock = 0;
+  precio = 0;
+  costoEnvio = 0;
+  calificacionPromedio = 0; //¿esto será con estrellas?
+  cantidadReseñas = 0;
+  urlImagenPortada = ""; // string: url a la imagen
+  palabrasClave = []; // Ejemplo: “Matemáticas”, “Digital”, etc.
+  destacado = "";   // ejemplo: “Más vendidos”, “Ofertas de la semana” 
+  disponible = "";
+
+  // constructor 
+  constructor(id, titulo, autor, editorial, descripcion, genero,
+    idioma, numeroPaginas, añoPublicacion, formato, edicion, stock, precio,
+    costoEnvio, calificacionPromedio, cantidadReseñas, urlImagenPortada,
+    palabrasClave, destacado, disponible) {
+    this.id = id;
+    this.titulo = titulo;
+    this.autor = autor;
+    this.editorial = editorial;
+    this.descripcion = descripcion;
+    this.genero = genero;
+    this.idioma = idioma;
+    this.numeroPaginas = numeroPaginas;
+    this.añoPublicacion = añoPublicacion;
+    this.formato = formato;
+    this.edicion = edicion;
+    this.stock = stock;
+    this.precio = precio;
+    this.costoEnvio = costoEnvio;
+    this.calificacionPromedio = calificacionPromedio;
+    this.cantidadReseñas = cantidadReseñas;
+    this.urlImagenPortada = urlImagenPortada;
+    this.palabrasClave = palabrasClave;
+    this.destacado = destacado;
+    this.disponible = disponible;
+  }
+};
+
+// -- Astronomía (Adrián) -- //
+
 const principiosAstrofisica = new Libro(
   1,
   "Principios fundamentales de la astrofísica",
@@ -290,7 +346,7 @@ const principiosAstrofisica = new Libro(
 
 // --- 1. TECNOLOGÍA (Jessica) ---
 
-const elMitoDeSeguridad = new libro 
+const elMitoDeSeguridad = new Libro 
 (
          40,
         "El Mito de la Seguridad: Construyendo Sistemas Robustos",
@@ -313,3 +369,77 @@ const elMitoDeSeguridad = new libro
         "Recomendado",
         "Disponible"
 );
+
+// -- Economía y Literatura (Karen) -- //
+
+const donQuijote = new Libro(
+  3,
+  "Don Quijote de la Mancha",
+  "Miguel de Cervantes Saavedra",
+  "Alfaguara",
+  "Considerada la primera novela moderna, Don Quijote de la Mancha relata las aventuras de Alonso Quijano, un hidalgo que enloquece tras leer libros de caballería y decide convertirse en caballero andante. Acompañado de su fiel escudero Sancho Panza, vive episodios cómicos y profundos que exploran la realidad, la imaginación, la locura y la naturaleza humana. Una obra maestra universal.",
+  "Literatura clásica",
+  "Español",
+  1056,
+  1605,
+  "Novela",
+  "Edición conmemorativa",
+  20,
+  399.00,
+  0.00,
+  5.0,
+  25,
+  "./assets/donQuijote.jpg",
+  ["Clásicos", "Novela", "Literatura española"],
+  "Recomendados",
+  "disponible"
+);
+
+const fundamentosEconomia = new Libro(
+  4,
+  "Fundamentos de Economía",
+  "Paul Krugman, Robin Wells",
+  "McGraw-Hill",
+  "Fundamentos de Economía presenta de manera clara y accesible los principios esenciales de la economía moderna. A través de explicaciones precisas, ejemplos cotidianos y gráficos intuitivos, el libro introduce conceptos como oferta y demanda, mercados competitivos, fallas de mercado, política económica y el papel del gobierno en la economía. Diseñado para estudiantes que buscan comprender cómo funciona el mundo económico real.",
+  "Economía",
+  "Español",
+  720,
+  2021,
+  "Académico",
+  "Cuarta edición",
+  40,
+  899.00,
+  0.00,
+  4.8,
+  15,
+  "./assets/fundamentosEconomia.jpg",
+  ["Economía", "Educación", "Ciencias Sociales"],
+  "Nuevos",
+  "disponible"
+);
+
+// -- Ingeniería (EDU) -- //
+
+const engineeringMechanics = new Libro(
+
+  45,
+  "Engineering Mechanics: Dynamics",
+  "J. L. Meriam, L. G. Kraige",
+  "Wiley",
+  "Un libro fundamental en la formación de ingenieros, que cubre los principios de la dinámica con un enfoque claro, ejemplos prácticos y problemas diseñados para desarrollar habilidades de resolución tanto conceptual como matemática.",
+  "Ingeniería Mecánica",
+  "Inglés",
+  784,
+  2016,
+  "Físico",
+  "8th Edition",
+  12,
+  1450,
+  79,
+  4.7,
+  2150,
+  "./assets/EngineeringMechanics.jpg",
+  ["ingeniería", "dinámica", "mecánica", "física", "Meriam"],
+  "Libro universitario esencial",
+  "Sí"
+)
