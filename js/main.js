@@ -110,7 +110,7 @@ const cardData = [
         "title": "Producto B",
         "description": "Una descripción detallada del producto B.",
         "price": 39.50,
-        "image": src= "./"
+        "image": "./"
     },
     {
         "title": "Microbiología y Parasitología Médicas",
@@ -122,7 +122,7 @@ const cardData = [
         "title": "Producto B",
         "description": "Una descripción detallada del producto B.",
         "price": 39.50,
-        "image": src= "./"
+        "image": "./"
     },
     {
         "title": "Microbiología y Parasitología Médicas",
@@ -134,7 +134,7 @@ const cardData = [
         "title": "Producto B",
         "description": "Una descripción detallada del producto B.",
         "price": 39.50,
-        "image": src= "./"
+        "image": "./"
     },
     {
         "title": "Microbiología y Parasitología Médicas",
@@ -146,7 +146,7 @@ const cardData = [
         "title": "Producto B",
         "description": "Una descripción detallada del producto B.",
         "price": 39.50,
-        "image": src= "./"
+        "image": "./"
     },
      {
         "title": "Microbiología y Parasitología Médicas",
@@ -158,7 +158,7 @@ const cardData = [
         "title": "Producto B",
         "description": "Una descripción detallada del producto B.",
         "price": 39.50,
-        "image": src= "./"
+        "image": "./"
     }
 ];
 const cardsContainer = document.getElementById('cards-container');
@@ -192,60 +192,6 @@ cardData.forEach(item => {
     // Añadir la tarjeta completa al contenedor
     cardsContainer.appendChild(card);
 });
-
-class Libro {
-
-  // Variables | Constantes
-  id = 0;
-  titulo = "";
-  autor = "";
-  editorial = "";
-  descripcion = "";
-  genero = "";
-  idioma = "";
-  numeroPaginas = 0;
-  añoPublicacion = 0;
-  formato = "";    // físico o digital
-  edicion = "";
-  stock = 0;
-  precio = 0;
-  costoEnvio = 0;
-  calificacionPromedio = 0; //¿esto será con estrellas?
-  cantidadReseñas = 0;
-  urlImagenPortada = ""; // string: url a la imagen
-  palabrasClave = []; // Ejemplo: “Matemáticas”, “Digital”, etc.
-  destacado = "";   // ejemplo: “Más vendidos”, “Ofertas de la semana” 
-  disponible = "";
-
-  // constructor 
-  constructor(id, titulo, autor, editorial, descripcion, genero,
-    idioma, numeroPaginas, añoPublicacion, formato, edicion, stock, precio,
-    costoEnvio, calificacionPromedio, cantidadReseñas, urlImagenPortada,
-    palabrasClave, destacado, disponible) {
-    this.id = id;
-    this.titulo = titulo;
-    this.autor = autor;
-    this.editorial = editorial;
-    this.descripcion = descripcion;
-    this.genero = genero;
-    this.idioma = idioma;
-    this.numeroPaginas = numeroPaginas;
-    this.añoPublicacion = añoPublicacion;
-    this.formato = formato;
-    this.edicion = edicion;
-    this.stock = stock;
-    this.precio = precio;
-    this.costoEnvio = costoEnvio;
-    this.calificacionPromedio = calificacionPromedio;
-    this.cantidadReseñas = cantidadReseñas;
-    this.urlImagenPortada = urlImagenPortada;
-    this.palabrasClave = palabrasClave;
-    this.destacado = destacado;
-    this.disponible = disponible;
-  }
-};
-
-
 
 class Libro {
 
