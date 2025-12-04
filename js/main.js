@@ -290,7 +290,7 @@ const principiosAstrofisica = new Libro(
 
 // --- 1. TECNOLOGÍA (Jessica) ---
 
-const elMitoDeSeguridad = new libro 
+const elMitoDeSeguridad = new Libro 
 (
          40,
         "El Mito de la Seguridad: Construyendo Sistemas Robustos",
@@ -312,4 +312,50 @@ const elMitoDeSeguridad = new libro
         ["Ciberseguridad, Criptografía, Redes"],
         "Recomendado",
         "Disponible"
+);
+
+const donQuijote = new Libro(
+  3,
+  "Don Quijote de la Mancha",
+  "Miguel de Cervantes Saavedra",
+  "Alfaguara",
+  "Considerada la primera novela moderna, Don Quijote de la Mancha relata las aventuras de Alonso Quijano, un hidalgo que enloquece tras leer libros de caballería y decide convertirse en caballero andante. Acompañado de su fiel escudero Sancho Panza, vive episodios cómicos y profundos que exploran la realidad, la imaginación, la locura y la naturaleza humana. Una obra maestra universal.",
+  "Literatura clásica",
+  "Español",
+  1056,
+  1605,
+  "Novela",
+  "Edición conmemorativa",
+  20,
+  399.00,
+  0.00,
+  5.0,
+  25,
+  "./assets/donQuijote.jpg",
+  ["Clásicos", "Novela", "Literatura española"],
+  "Recomendados",
+  "disponible"
+);
+
+const fundamentosEconomia = new Libro(
+  4,
+  "Fundamentos de Economía",
+  "Paul Krugman, Robin Wells",
+  "McGraw-Hill",
+  "Fundamentos de Economía presenta de manera clara y accesible los principios esenciales de la economía moderna. A través de explicaciones precisas, ejemplos cotidianos y gráficos intuitivos, el libro introduce conceptos como oferta y demanda, mercados competitivos, fallas de mercado, política económica y el papel del gobierno en la economía. Diseñado para estudiantes que buscan comprender cómo funciona el mundo económico real.",
+  "Economía",
+  "Español",
+  720,
+  2021,
+  "Académico",
+  "Cuarta edición",
+  40,
+  899.00,
+  0.00,
+  4.8,
+  15,
+  "./assets/fundamentosEconomia.jpg",
+  ["Economía", "Educación", "Ciencias Sociales"],
+  "Nuevos",
+  "disponible"
 );
