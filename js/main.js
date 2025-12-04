@@ -87,6 +87,112 @@ if (formContacto) {
 
 // Productos ===========================================================
 
+const cardData = [
+    {
+        "title": "Microbiología y Parasitología Médicas",
+        "description": "La segunda edición de esta obra revisa y actualiza todos los capítulos e incorpora temas de candente actualidad como el SARS-CoV-2",
+        "price": 1407,
+        "image": "./assets/libroParasitologia.jpg"
+    },
+    {
+        "title": "Políticas y gobernanza ambientales",
+        "description": "El gobierno y la gestión pública del medio ambiente deben actuar como mediadores ante los conflictos de intereses privados y sociales.",
+        "price": 724,
+        "image": "./assets/libroPolitica.jpg"
+    },
+    {
+        "title": "Microbiología y Parasitología Médicas",
+        "description": "La segunda edición de esta obra revisa y actualiza todos los capítulos e incorpora temas de candente actualidad como el SARS-CoV-2",
+        "price": 1407,
+        "image": "./assets/libroAstrofisica.jpg"
+    },
+    {
+        "title": "Producto B",
+        "description": "Una descripción detallada del producto B.",
+        "price": 39.50,
+        "image": src= "./"
+    },
+    {
+        "title": "Microbiología y Parasitología Médicas",
+        "description": "La segunda edición de esta obra revisa y actualiza todos los capítulos e incorpora temas de candente actualidad como el SARS-CoV-2",
+        "price": 1407,
+        "image": ""
+    },
+    {
+        "title": "Producto B",
+        "description": "Una descripción detallada del producto B.",
+        "price": 39.50,
+        "image": src= "./"
+    },
+    {
+        "title": "Microbiología y Parasitología Médicas",
+        "description": "La segunda edición de esta obra revisa y actualiza todos los capítulos e incorpora temas de candente actualidad como el SARS-CoV-2",
+        "price": 1407,
+        "image": ""
+    },
+    {
+        "title": "Producto B",
+        "description": "Una descripción detallada del producto B.",
+        "price": 39.50,
+        "image": src= "./"
+    },
+    {
+        "title": "Microbiología y Parasitología Médicas",
+        "description": "La segunda edición de esta obra revisa y actualiza todos los capítulos e incorpora temas de candente actualidad como el SARS-CoV-2",
+        "price": 1407,
+        "image": ""
+    },
+    {
+        "title": "Producto B",
+        "description": "Una descripción detallada del producto B.",
+        "price": 39.50,
+        "image": src= "./"
+    },
+     {
+        "title": "Microbiología y Parasitología Médicas",
+        "description": "La segunda edición de esta obra revisa y actualiza todos los capítulos e incorpora temas de candente actualidad como el SARS-CoV-2",
+        "price": 1407,
+        "image": ""
+    },
+    {
+        "title": "Producto B",
+        "description": "Una descripción detallada del producto B.",
+        "price": 39.50,
+        "image": src= "./"
+    }
+];
+const cardsContainer = document.getElementById('cards-container');
+
+cardData.forEach(item => {
+    // Crear el elemento de la tarjeta
+    const card = document.createElement('div');
+    card.classList.add('card'); // Asignar una clase para estilos
+
+    // Crear y añadir la imagen
+    const img = document.createElement('img');
+    img.src = item.image;
+    img.alt = item.title;
+    card.appendChild(img);
+
+    // Crear y añadir el título
+    const title = document.createElement('h2');
+    title.textContent = item.title;
+    card.appendChild(title);
+
+    // Crear y añadir la descripción
+    const description = document.createElement('p');
+    description.textContent = item.description;
+    card.appendChild(description);
+
+    // Crear y añadir el precio
+    const price = document.createElement('span');
+    price.textContent = `$${item.price.toFixed(2)}`;
+    card.appendChild(price);
+
+    // Añadir la tarjeta completa al contenedor
+    cardsContainer.appendChild(card);
+});
+
 class Libro {
 
   // Variables | Constantes
