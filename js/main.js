@@ -110,7 +110,7 @@ const cardData = [
         "title": "Producto B",
         "description": "Una descripción detallada del producto B.",
         "price": 39.50,
-        "image": src= "./"
+        "image": "./"
     },
     {
         "title": "Microbiología y Parasitología Médicas",
@@ -122,7 +122,7 @@ const cardData = [
         "title": "Producto B",
         "description": "Una descripción detallada del producto B.",
         "price": 39.50,
-        "image": src= "./"
+        "image": "./"
     },
     {
         "title": "Microbiología y Parasitología Médicas",
@@ -134,7 +134,7 @@ const cardData = [
         "title": "Producto B",
         "description": "Una descripción detallada del producto B.",
         "price": 39.50,
-        "image": src= "./"
+        "image": "./"
     },
     {
         "title": "Microbiología y Parasitología Médicas",
@@ -146,7 +146,7 @@ const cardData = [
         "title": "Producto B",
         "description": "Una descripción detallada del producto B.",
         "price": 39.50,
-        "image": src= "./"
+        "image": "./"
     },
      {
         "title": "Microbiología y Parasitología Médicas",
@@ -158,7 +158,7 @@ const cardData = [
         "title": "Producto B",
         "description": "Una descripción detallada del producto B.",
         "price": 39.50,
-        "image": src= "./"
+        "image": "./"
     }
 ];
 const cardsContainer = document.getElementById('cards-container');
