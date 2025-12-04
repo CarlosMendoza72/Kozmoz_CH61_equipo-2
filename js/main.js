@@ -245,6 +245,8 @@ class Libro {
   }
 };
 
+// -- Astronomía (Adrián) -- //
+
 const principiosAstrofisica = new Libro(
   1,
   "Principios fundamentales de la astrofísica",
@@ -314,6 +316,8 @@ const elMitoDeSeguridad = new Libro
         "Disponible"
 );
 
+// -- Economía y Literatura (Karen) -- //
+
 const donQuijote = new Libro(
   3,
   "Don Quijote de la Mancha",
@@ -359,3 +363,29 @@ const fundamentosEconomia = new Libro(
   "Nuevos",
   "disponible"
 );
+
+// -- Ingeniería (EDU) -- //
+
+const engineeringMechanics = new Libro(
+
+  45,
+  "Engineering Mechanics: Dynamics",
+  "J. L. Meriam, L. G. Kraige",
+  "Wiley",
+  "Un libro fundamental en la formación de ingenieros, que cubre los principios de la dinámica con un enfoque claro, ejemplos prácticos y problemas diseñados para desarrollar habilidades de resolución tanto conceptual como matemática.",
+  "Ingeniería Mecánica",
+  "Inglés",
+  784,
+  2016,
+  "Físico",
+  "8th Edition",
+  12,
+  1450,
+  79,
+  4.7,
+  2150,
+  "./assets/EngineeringMechanics.jpg",
+  ["ingeniería", "dinámica", "mecánica", "física", "Meriam"],
+  "Libro universitario esencial",
+  "Sí"
+)
