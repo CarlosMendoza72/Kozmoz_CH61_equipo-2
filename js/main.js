@@ -1,4 +1,5 @@
-// Acerca de nosotros =================================================
+// Acerca de nosotros ===============================================================
+
 // Acordeon
 const accordion = document.getElementsByClassName('container');
 
@@ -7,12 +8,10 @@ for (let i = 0; i < accordion.length; i++) {
     this.classList.toggle('active');
   });
 }
-// Acerca de nosotros =================================================
 
-// Contacto ===========================================================
-
-
+// Contacto =========================================================================
 // Inicializar EmailJS
+
 const formContacto = document.getElementById("formContacto");
 const mensajeExito = document.getElementById("mensajeExito");
 
@@ -25,11 +24,12 @@ if (formContacto) {
     // Regex
     const regexNombre = /^[A-Za-zÁÉÍÓÚáéíóúÑñ\s]+$/;
     const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const regexTel = /^(\+?52)?[-\s.]?\(?\d{2,3}\)?[-\s.]?\d{3}[-\s.]?\d{4}$/;
 
     // Inputs
     const nombre = document.getElementById("nombre");
     const apellidoPat = document.getElementById("apellidoPat");
-    const apellidoMat = document.getElementById("apellidoMat");
+    const telefono = document.getElementById("telefono");
     const email = document.getElementById("email");
     const mensaje = document.getElementById("mensaje");
 
@@ -44,10 +44,10 @@ if (formContacto) {
       esValido = false;
     } else apellidoPat.classList.remove("is-invalid");
 
-    if (!regexNombre.test(apellidoMat.value.trim())) {
-      apellidoMat.classList.add("is-invalid");
+    if (!regexTel.test(telefono.value.trim())) {
+      telefono.classList.add("is-invalid");
       esValido = false;
-    } else apellidoMat.classList.remove("is-invalid");
+    } else telefono.classList.remove("is-invalid");
 
     if (!regexEmail.test(email.value.trim())) {
       email.classList.add("is-invalid");
@@ -67,7 +67,6 @@ if (formContacto) {
       return;
     }
 
-
     // enviar emails
     emailjs.sendForm("service_73k6p3n", "template_47amrzc", this)
       .then(() => {
@@ -85,113 +84,120 @@ if (formContacto) {
   });
 }
 
-// Productos ===========================================================
+// Productos ========================================================================
+
+// Datos de libros en las cartas
 
 const cardData = [
-    {
-        "title": "Microbiología y Parasitología Médicas",
-        "description": "La segunda edición de esta obra revisa y actualiza todos los capítulos e incorpora temas de candente actualidad como el SARS-CoV-2",
-        "price": 1407,
-        "image": "./assets/libroParasitologia.jpg"
-    },
-    {
-        "title": "Políticas y gobernanza ambientales",
-        "description": "El gobierno y la gestión pública del medio ambiente deben actuar como mediadores ante los conflictos de intereses privados y sociales.",
-        "price": 724,
-        "image": "./assets/libroPolitica.jpg"
-    },
-    {
-        "title": "Microbiología y Parasitología Médicas",
-        "description": "La segunda edición de esta obra revisa y actualiza todos los capítulos e incorpora temas de candente actualidad como el SARS-CoV-2",
-        "price": 1407,
-        "image": "./assets/libroAstrofisica.jpg"
-    },
-    {
-        "title": "Producto B",
-        "description": "Una descripción detallada del producto B.",
-        "price": 39.50,
-        "image": "./"
-    },
-    {
-        "title": "Microbiología y Parasitología Médicas",
-        "description": "La segunda edición de esta obra revisa y actualiza todos los capítulos e incorpora temas de candente actualidad como el SARS-CoV-2",
-        "price": 1407,
-        "image": ""
-    },
-    {
-        "title": "Producto B",
-        "description": "Una descripción detallada del producto B.",
-        "price": 39.50,
-        "image": "./"
-    },
-    {
-        "title": "Microbiología y Parasitología Médicas",
-        "description": "La segunda edición de esta obra revisa y actualiza todos los capítulos e incorpora temas de candente actualidad como el SARS-CoV-2",
-        "price": 1407,
-        "image": ""
-    },
-    {
-        "title": "Producto B",
-        "description": "Una descripción detallada del producto B.",
-        "price": 39.50,
-        "image": "./"
-    },
-    {
-        "title": "Microbiología y Parasitología Médicas",
-        "description": "La segunda edición de esta obra revisa y actualiza todos los capítulos e incorpora temas de candente actualidad como el SARS-CoV-2",
-        "price": 1407,
-        "image": ""
-    },
-    {
-        "title": "Producto B",
-        "description": "Una descripción detallada del producto B.",
-        "price": 39.50,
-        "image": "./"
-    },
-     {
-        "title": "Microbiología y Parasitología Médicas",
-        "description": "La segunda edición de esta obra revisa y actualiza todos los capítulos e incorpora temas de candente actualidad como el SARS-CoV-2",
-        "price": 1407,
-        "image": ""
-    },
-    {
-        "title": "Producto B",
-        "description": "Una descripción detallada del producto B.",
-        "price": 39.50,
-        "image": "./"
-    }
+  {
+    "title": "Microbiología y Parasitología Médicas",
+    "description": "La segunda edición de esta obra revisa y actualiza todos los capítulos e incorpora temas de candente actualidad como el SARS-CoV-2",
+    "price": 1407,
+    "image": "./assets/libroParasitologia.jpg"
+  },
+  {
+    "title": "Políticas y gobernanza ambientales",
+    "description": "El gobierno y la gestión pública del medio ambiente deben actuar como mediadores ante los conflictos de intereses privados y sociales.",
+    "price": 724,
+    "image": "./assets/libroPolitica.jpg"
+  },
+  {
+    "title": "Microbiología y Parasitología Médicas",
+    "description": "La segunda edición de esta obra revisa y actualiza todos los capítulos e incorpora temas de candente actualidad como el SARS-CoV-2",
+    "price": 1407,
+    "image": "./assets/libroAstrofisica.jpg"
+  },
+  {
+    "title": "Producto B",
+    "description": "Una descripción detallada del producto B.",
+    "price": 39.50,
+    "image": "./"
+  },
+  {
+    "title": "Microbiología y Parasitología Médicas",
+    "description": "La segunda edición de esta obra revisa y actualiza todos los capítulos e incorpora temas de candente actualidad como el SARS-CoV-2",
+    "price": 1407,
+    "image": ""
+  },
+  {
+    "title": "Producto B",
+    "description": "Una descripción detallada del producto B.",
+    "price": 39.50,
+    "image": "./"
+  },
+  {
+    "title": "Microbiología y Parasitología Médicas",
+    "description": "La segunda edición de esta obra revisa y actualiza todos los capítulos e incorpora temas de candente actualidad como el SARS-CoV-2",
+    "price": 1407,
+    "image": ""
+  },
+  {
+    "title": "Producto B",
+    "description": "Una descripción detallada del producto B.",
+    "price": 39.50,
+    "image": "./"
+  },
+  {
+    "title": "Microbiología y Parasitología Médicas",
+    "description": "La segunda edición de esta obra revisa y actualiza todos los capítulos e incorpora temas de candente actualidad como el SARS-CoV-2",
+    "price": 1407,
+    "image": ""
+  },
+  {
+    "title": "Producto B",
+    "description": "Una descripción detallada del producto B.",
+    "price": 39.50,
+    "image": "./"
+  },
+  {
+    "title": "Microbiología y Parasitología Médicas",
+    "description": "La segunda edición de esta obra revisa y actualiza todos los capítulos e incorpora temas de candente actualidad como el SARS-CoV-2",
+    "price": 1407,
+    "image": ""
+  },
+  {
+    "title": "Producto B",
+    "description": "Una descripción detallada del producto B.",
+    "price": 39.50,
+    "image": "./"
+  }
 ];
+
+// Generador de las cartas en html
+
 const cardsContainer = document.getElementById('cards-container');
 
 cardData.forEach(item => {
-    // Crear el elemento de la tarjeta
-    const card = document.createElement('div');
-    card.classList.add('card'); // Asignar una clase para estilos
+  // Crear el elemento de la tarjeta
+  const card = document.createElement('div');
+  card.classList.add('card'); // Asignar una clase para estilos
 
-    // Crear y añadir la imagen
-    const img = document.createElement('img');
-    img.src = item.image;
-    img.alt = item.title;
-    card.appendChild(img);
+  // Crear y añadir la imagen
+  const img = document.createElement('img');
+  img.src = item.image;
+  img.alt = item.title;
+  card.appendChild(img);
 
-    // Crear y añadir el título
-    const title = document.createElement('h2');
-    title.textContent = item.title;
-    card.appendChild(title);
+  // Crear y añadir el título
+  const title = document.createElement('h2');
+  title.textContent = item.title;
+  card.appendChild(title);
 
-    // Crear y añadir la descripción
-    const description = document.createElement('p');
-    description.textContent = item.description;
-    card.appendChild(description);
+  // Crear y añadir la descripción
+  const description = document.createElement('p');
+  description.textContent = item.description;
+  card.appendChild(description);
 
-    // Crear y añadir el precio
-    const price = document.createElement('span');
-    price.textContent = `$${item.price.toFixed(2)}`;
-    card.appendChild(price);
+  // Crear y añadir el precio
+  const price = document.createElement('span');
+  price.textContent = `$${item.price.toFixed(2)}`;
+  card.appendChild(price);
 
-    // Añadir la tarjeta completa al contenedor
-    cardsContainer.appendChild(card);
+  // Añadir la tarjeta completa al contenedor
+  cardsContainer.appendChild(card);
 });
+
+// Clase Libro
 
 class Libro {
 
@@ -243,24 +249,15 @@ class Libro {
     this.destacado = destacado;
     this.disponible = disponible;
   }
-};
+}; // clase Libro
 
 // -- Astronomía (Adrián) -- //
-
 const principiosAstrofisica = new Libro(
   1,
   "Principios fundamentales de la astrofísica",
   "Miguel Ángel Sabadell",
   "Pinolia",
-  "¿Te has preguntado alguna vez por qué la noche es oscura si estamos \
-  rodeados de millones de estrellas? ¿Cuál es la composición de estas y \
-  por qué brillan más antes de apagarse? ¿Qué desencadenó la Gran Explosión \
-  que dio origen a nuestro universo? ¿Sabías que existen \
-  «ciudades cósmicas»? ¿Cuál es la fecha de caducidad del universo? \
-  Miguel Ángel Sabadell, astrofísico de renombre y destacado divulgador, \
-  responde de manera magistral a estas preguntas y a muchas otras que \
-  envuelven el misterioso universo que todos habitamos, pero conocemos tan \
-  poco. A través de un viaje extraordinario, revela los secretos que van \
+  "A través de un viaje extraordinario, revela los secretos que van \
   desde el mismo origen de la materia y los elementos químicos esenciales, \
   pasando por la formación de la Vía Láctea, hasta las explosiones de las \
   supernovas que dan forma y esculpen la arquitectura cósmica o la \
@@ -291,39 +288,42 @@ const principiosAstrofisica = new Libro(
 )
 
 // --- 1. TECNOLOGÍA (Jessica) ---
-
-const elMitoDeSeguridad = new Libro 
-(
-         40,
-        "El Mito de la Seguridad: Construyendo Sistemas Robustos",
-        "Bruce Schneier",
-        "Wiley",
-        "Un análisis profundo sobre los principios de la seguridad informática y cómo diseñar sistemas resilientes en un mundo digital.",
-        "Tecnología",
-        "Inglés",
-        432,
-        2000,
-        "Digital",
-        "Edición Revisada",
-        500,
-        19.99,
-        0.00,
-        4.5,
-        890,
-        "./assets/",
-        ["Ciberseguridad, Criptografía, Redes"],
-        "Recomendado",
-        "Disponible"
-);
+const elMitoDeSeguridad = new Libro
+  (
+    40,
+    "El Mito de la Seguridad: Construyendo Sistemas Robustos",
+    "Bruce Schneier",
+    "Wiley",
+    "Un análisis profundo sobre los principios de la seguridad informática y cómo \
+    diseñar sistemas resilientes en un mundo digital.",
+    "Tecnología",
+    "Inglés",
+    432,
+    2000,
+    "Digital",
+    "Edición Revisada",
+    500,
+    19.99,
+    0.00,
+    4.5,
+    890,
+    "./assets/",
+    ["Ciberseguridad, Criptografía, Redes"],
+    "Recomendado",
+    "Disponible"
+  );
 
 // -- Economía y Literatura (Karen) -- //
-
 const donQuijote = new Libro(
   3,
   "Don Quijote de la Mancha",
   "Miguel de Cervantes Saavedra",
   "Alfaguara",
-  "Considerada la primera novela moderna, Don Quijote de la Mancha relata las aventuras de Alonso Quijano, un hidalgo que enloquece tras leer libros de caballería y decide convertirse en caballero andante. Acompañado de su fiel escudero Sancho Panza, vive episodios cómicos y profundos que exploran la realidad, la imaginación, la locura y la naturaleza humana. Una obra maestra universal.",
+  "Considerada la primera novela moderna, Don Quijote de la Mancha relata las \
+  aventuras de Alonso Quijano, un hidalgo que enloquece tras leer libros de \
+  caballería y decide convertirse en caballero andante. Acompañado de su fiel \
+  escudero Sancho Panza, vive episodios cómicos y profundos que exploran la realidad,\
+   la imaginación, la locura y la naturaleza humana. Una obra maestra universal.",
   "Literatura clásica",
   "Español",
   1056,
@@ -346,7 +346,12 @@ const fundamentosEconomia = new Libro(
   "Fundamentos de Economía",
   "Paul Krugman, Robin Wells",
   "McGraw-Hill",
-  "Fundamentos de Economía presenta de manera clara y accesible los principios esenciales de la economía moderna. A través de explicaciones precisas, ejemplos cotidianos y gráficos intuitivos, el libro introduce conceptos como oferta y demanda, mercados competitivos, fallas de mercado, política económica y el papel del gobierno en la economía. Diseñado para estudiantes que buscan comprender cómo funciona el mundo económico real.",
+  "Fundamentos de Economía presenta de manera clara y accesible los principios \
+  esenciales de la economía moderna. A través de explicaciones precisas, ejemplos\
+   cotidianos y gráficos intuitivos, el libro introduce conceptos como oferta y \
+   demanda, mercados competitivos, fallas de mercado, política económica y el papel\
+    del gobierno en la economía. Diseñado para estudiantes que buscan comprender cómo\
+     funciona el mundo económico real.",
   "Economía",
   "Español",
   720,
@@ -365,14 +370,15 @@ const fundamentosEconomia = new Libro(
 );
 
 // -- Ingeniería (EDU) -- //
-
 const engineeringMechanics = new Libro(
 
   45,
   "Engineering Mechanics: Dynamics",
   "J. L. Meriam, L. G. Kraige",
   "Wiley",
-  "Un libro fundamental en la formación de ingenieros, que cubre los principios de la dinámica con un enfoque claro, ejemplos prácticos y problemas diseñados para desarrollar habilidades de resolución tanto conceptual como matemática.",
+  "Un libro fundamental en la formación de ingenieros, que cubre los principios de la\
+   dinámica con un enfoque claro, ejemplos prácticos y problemas diseñados para \
+   desarrollar habilidades de resolución tanto conceptual como matemática.",
   "Ingeniería Mecánica",
   "Inglés",
   784,
