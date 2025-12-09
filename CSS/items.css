@@ -39,3 +39,20 @@
     font-weight: bold;
     color: #b46e4c;
 }
+
+/*Estilos para formulario que agrega objetos*/
+#card-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background: #f5f5f5;
+  padding: 15px;
+  border-radius: 8px;
+  width: 300px;
+  margin-bottom: 20px;
+}
+
+#card-form input, #card-form textarea, #card-form button {
+  padding: 8px;
+  font-size: 1rem;
+}

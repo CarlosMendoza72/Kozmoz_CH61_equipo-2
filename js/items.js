@@ -36,30 +36,31 @@ const cardData = [
         "image": "./assets/donQuijote.jpg"
     },
     {
-        "title": "Microbiología y Parasitología Médicas",
-        "description": "La segunda edición de esta obra revisa y actualiza todos los capítulos e incorpora temas de candente actualidad como el SARS-CoV-2",
-        "price": 1407,
-        "image": src= "./assets/libroMicrobiologia.jpg"
+        "title": "El mito de la seguridad",
+        "description": "Un análisis profundo sobre los principios de la seguridad informática y cómo \
+    diseñar sistemas resilientes en un mundo digital.",
+        "price": 899,
+        "image": src= "./assets/mitoDeSeguridad.jpg"
     },
     {
-        "title": "Microbiología y Parasitología Médicas",
+        "title": "Aprende React en profundida",
         "description": "Un libro fundamental en la formación de ingenieros, que cubre los principios de la\
    dinámica con un enfoque claro, ejemplos prácticos y problemas",
         "price": 1407,
-        "image": "assets/EngineeringMechanics.jpg"
+        "image": "assets/aprendeReact.jpg"
     },
     {
-        "title": "Políticas y gobernanza ambientales: un vistazo a los instrumentos",
-        "description": "El gobierno y la gestión pública del medio ambiente deben actuar como mediadores ante los conflictos de intereses privados y sociales.",
-        "price": 724,
-        "image": src= "./assets/libroPolitica.jpg"
+        "title": "Fundamentals of physics",
+        "description": "This comprehensive textbook provides a clear and rigorous introduction to the fundamental principles of physics ",
+        "price": 1899,
+        "image": src= "./assets/fundamentals.jpg"
     },
     {
-        "title": "Fundamentos de Economía",
-        "description": "Fundamentos de Economía presenta de manera clara y accesible los principios \
-  esenciales de la economía moderna.",
-        "price": 899,
-        "image": "./assets/fundamentosEconomia.jpg"
+        "title": "Principios fundamentales de la astrofísica",
+        "description": "A través de un viaje extraordinario, revela los secretos que van \
+  desde el mismo origen de la materia y los elementos químicos esenciales",
+        "price": 600,
+        "image": "./assets/astrofisica.jpg"
     },
     {
         "title": "Don Quijote de la Mancha",
@@ -77,7 +78,8 @@ const cardData = [
     },
     {
         "title": "Engineering Mechanics: Dynamics",
-        "description": "Una descripción detallada del producto B.",
+        "description": "Un libro fundamental en la formación de ingenieros, que cubre los principios de la\
+   dinámica con un enfoque claro, ejemplos prácticos y problemas",
         "price": 1450,
         "image": src= "assets/EngineeringMechanics.jpg"
     }
@@ -112,6 +114,54 @@ cardData.forEach(item => {
 
     // Añadir la tarjeta completa al contenedor
     cardsContainer.appendChild(card);
+});
+
+function createCard(item) {
+    const card = document.createElement('div');
+    card.classList.add('card');
+
+    const img = document.createElement('img');
+    img.src = item.image;
+    img.alt = item.title;
+
+    const title = document.createElement('h2');
+    title.textContent = item.title;
+
+    const description = document.createElement('p');
+    description.textContent = item.description;
+
+    const price = document.createElement('span');
+    price.textContent = `$${item.price.toFixed(2)}`;
+
+    card.appendChild(img);
+    card.appendChild(title);
+    card.appendChild(description);
+    card.appendChild(price);
+
+    cardsContainer.appendChild(card);
+}// funcion createCard
+cardData.forEach(item => createCard(item));
+
+const form = document.getElementById('card-form');
+
+form.addEventListener('submit', (e) => {
+    e.preventDefault(); 
+
+    const newItem = {
+        title: document.getElementById('title').value,
+        description: document.getElementById('description').value,
+        price: parseFloat(document.getElementById('price').value),
+        image: document.getElementById('image').value
+    }; //newItem
+
+    // Agregar al array original
+    cardData.push(newItem);
+
+    // Crear la tarjeta visual
+    createCard(newItem);
+
+    // Limpiar formulario
+    form.reset();
 });
 
 // Clase Libro
