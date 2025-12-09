@@ -89,113 +89,119 @@ if (formContacto) {
 // Datos de libros en las cartas
 
 const cardData = [
-  {
-    "title": "Microbiología y Parasitología Médicas",
-    "description": "La segunda edición de esta obra revisa y actualiza todos los capítulos e incorpora temas de candente actualidad como el SARS-CoV-2",
-    "price": 1407,
-    "image": "./assets/libroParasitologia.jpg"
-  },
-  {
-    "title": "Políticas y gobernanza ambientales",
-    "description": "El gobierno y la gestión pública del medio ambiente deben actuar como mediadores ante los conflictos de intereses privados y sociales.",
-    "price": 724,
-    "image": "./assets/libroPolitica.jpg"
-  },
-  {
-    "title": "Microbiología y Parasitología Médicas",
-    "description": "La segunda edición de esta obra revisa y actualiza todos los capítulos e incorpora temas de candente actualidad como el SARS-CoV-2",
-    "price": 1407,
-    "image": "./assets/libroAstrofisica.jpg"
-  },
-  {
-    "title": "Producto B",
-    "description": "Una descripción detallada del producto B.",
-    "price": 39.50,
-    "image": "./"
-  },
-  {
-    "title": "Microbiología y Parasitología Médicas",
-    "description": "La segunda edición de esta obra revisa y actualiza todos los capítulos e incorpora temas de candente actualidad como el SARS-CoV-2",
-    "price": 1407,
-    "image": ""
-  },
-  {
-    "title": "Producto B",
-    "description": "Una descripción detallada del producto B.",
-    "price": 39.50,
-    "image": "./"
-  },
-  {
-    "title": "Microbiología y Parasitología Médicas",
-    "description": "La segunda edición de esta obra revisa y actualiza todos los capítulos e incorpora temas de candente actualidad como el SARS-CoV-2",
-    "price": 1407,
-    "image": ""
-  },
-  {
-    "title": "Producto B",
-    "description": "Una descripción detallada del producto B.",
-    "price": 39.50,
-    "image": "./"
-  },
-  {
-    "title": "Microbiología y Parasitología Médicas",
-    "description": "La segunda edición de esta obra revisa y actualiza todos los capítulos e incorpora temas de candente actualidad como el SARS-CoV-2",
-    "price": 1407,
-    "image": ""
-  },
-  {
-    "title": "Producto B",
-    "description": "Una descripción detallada del producto B.",
-    "price": 39.50,
-    "image": "./"
-  },
-  {
-    "title": "Microbiología y Parasitología Médicas",
-    "description": "La segunda edición de esta obra revisa y actualiza todos los capítulos e incorpora temas de candente actualidad como el SARS-CoV-2",
-    "price": 1407,
-    "image": ""
-  },
-  {
-    "title": "Producto B",
-    "description": "Una descripción detallada del producto B.",
-    "price": 39.50,
-    "image": "./"
-  }
+    {
+        "title": "Microbiología y Parasitología Médicas",
+        "description": "La segunda edición de esta obra revisa y actualiza todos los capítulos e incorpora temas de candente actualidad como el SARS-CoV-2",
+        "price": 1407,
+        "image": "./assets/libroMicrobiologia.jpg"
+    },
+    {
+        "title": "Políticas y gobernanza ambientales: un vistazo a los instrumentos",
+        "description": "El gobierno y la gestión pública del medio ambiente deben actuar como mediadores ante los conflictos de intereses privados y sociales.",
+        "price": 724,
+        "image": "./assets/libroPolitica.jpg"
+    },
+    {
+        "title": "Engineering Mechanics: Dynamics",
+        "description": "Un libro fundamental en la formación de ingenieros, que cubre los principios de la\
+   dinámica con un enfoque claro, ejemplos prácticos y problemas",
+        "price": 1450,
+        "image": "./assets/EngineeringMechanics.jpg"
+    },
+    {
+        "title": "Fundamentos de Economía",
+        "description": "Fundamentos de Economía presenta de manera clara y accesible los principios \
+  esenciales de la economía moderna.",
+        "price": 899,
+        "image": src= "./assets/fundamentosEconomia.jpg"
+    },
+    {
+        "title": "Don Quijote de la Mancha",
+        "description": "Considerada la primera novela moderna, Don Quijote de la Mancha relata las \
+  aventuras de Alonso Quijano, un hidalgo que enloquece tras leer libros de \
+  caballería y decide convertirse en caballero andante.",
+        "price": 399,
+        "image": "./assets/donQuijote.jpg"
+    },
+    {
+        "title": "Microbiología y Parasitología Médicas",
+        "description": "La segunda edición de esta obra revisa y actualiza todos los capítulos e incorpora temas de candente actualidad como el SARS-CoV-2",
+        "price": 1407,
+        "image": src= "./assets/libroMicrobiologia.jpg"
+    },
+    {
+        "title": "Microbiología y Parasitología Médicas",
+        "description": "Un libro fundamental en la formación de ingenieros, que cubre los principios de la\
+   dinámica con un enfoque claro, ejemplos prácticos y problemas",
+        "price": 1407,
+        "image": "assets/EngineeringMechanics.jpg"
+    },
+    {
+        "title": "Políticas y gobernanza ambientales: un vistazo a los instrumentos",
+        "description": "El gobierno y la gestión pública del medio ambiente deben actuar como mediadores ante los conflictos de intereses privados y sociales.",
+        "price": 724,
+        "image": src= "./assets/libroPolitica.jpg"
+    },
+    {
+        "title": "Fundamentos de Economía",
+        "description": "Fundamentos de Economía presenta de manera clara y accesible los principios \
+  esenciales de la economía moderna.",
+        "price": 899,
+        "image": "./assets/fundamentosEconomia.jpg"
+    },
+    {
+        "title": "Don Quijote de la Mancha",
+        "description": "Considerada la primera novela moderna, Don Quijote de la Mancha relata las \
+  aventuras de Alonso Quijano, un hidalgo que enloquece tras leer libros de \
+  caballería y decide convertirse en caballero andante.",
+        "price": 399,
+        "image": src= "./assets/donQuijote.jpg"
+    },
+     {
+        "title": "Microbiología y Parasitología Médicas",
+        "description": "La segunda edición de esta obra revisa y actualiza todos los capítulos e incorpora temas de candente actualidad como el SARS-CoV-2",
+        "price": 1407,
+        "image": "./assets/libroMicrobiologia.jpg"
+    },
+    {
+        "title": "Engineering Mechanics: Dynamics",
+        "description": "Una descripción detallada del producto B.",
+        "price": 1450,
+        "image": src= "assets/EngineeringMechanics.jpg"
+    }
 ];
-
-// Generador de las cartas en html
-
 const cardsContainer = document.getElementById('cards-container');
 
 cardData.forEach(item => {
-  // Crear el elemento de la tarjeta
-  const card = document.createElement('div');
-  card.classList.add('card'); // Asignar una clase para estilos
+    // Crear el elemento de la tarjeta
+    const card = document.createElement('div');
+    card.classList.add('card'); // Asignar una clase para estilos
 
-  // Crear y añadir la imagen
-  const img = document.createElement('img');
-  img.src = item.image;
-  img.alt = item.title;
-  card.appendChild(img);
+    // Crear y añadir la imagen
+    const img = document.createElement('img');
+    img.src = item.image;
+    img.alt = item.title;
+    card.appendChild(img);
 
-  // Crear y añadir el título
-  const title = document.createElement('h2');
-  title.textContent = item.title;
-  card.appendChild(title);
+    // Crear y añadir el título
+    const title = document.createElement('h2');
+    title.textContent = item.title;
+    card.appendChild(title);
 
-  // Crear y añadir la descripción
-  const description = document.createElement('p');
-  description.textContent = item.description;
-  card.appendChild(description);
+    // Crear y añadir la descripción
+    const description = document.createElement('p');
+    description.textContent = item.description;
+    card.appendChild(description);
 
-  // Crear y añadir el precio
-  const price = document.createElement('span');
-  price.textContent = `$${item.price.toFixed(2)}`;
-  card.appendChild(price);
+    // Crear y añadir el precio
+    const price = document.createElement('span');
+    price.textContent = `$${item.price.toFixed(2)}`;
+    card.appendChild(price);
 
-  // Añadir la tarjeta completa al contenedor
-  cardsContainer.appendChild(card);
+    // Añadir la tarjeta completa al contenedor
+    cardsContainer.appendChild(card);
 });
+
 
 // Clase Libro
 
