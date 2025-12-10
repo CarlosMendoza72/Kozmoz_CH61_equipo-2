@@ -1,6 +1,4 @@
-// Acerca de nosotros ===============================================================
-
-// Acordeon
+// Acordeon de acerca de nosotros ========================================
 const accordion = document.getElementsByClassName('container');
 
 for (let i = 0; i < accordion.length; i++) {
