@@ -83,7 +83,7 @@ h1.contacto {
 h1.descripcion {
   color: var(--h2Color);
   font-family: var(--h2Font);
-  font-size: 40px;
+  font-size: 45px;
   background-color: var(--bgColor);
 }
 
@@ -131,7 +131,7 @@ h2.banner {
 .card-textobanner {
   background-color: var(--bgColor);
   font-family: var(--pFont);
-  font-size: 25px;
+  font-size: 20px;
   text-align: justify;
 }
 
