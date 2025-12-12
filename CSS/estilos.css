@@ -493,4 +493,59 @@ textarea.contacto {
   }
 }
 
-/* Productos =========================================================== */
+/* Tarjeta donde va el formulario */
+.form-card {
+  max-width: 650px;
+  margin: 60px auto;
+  background: #b46e4c;
+  padding: 40px 35px;
+  border-radius: 20px;
+  border: 2px solid var(--titleMision);
+ /* box-shadow: 0px 6px 18px rgba(0, 0, 0, 0.18);*/
+  transition: 0.3s ease-in-out;
+}
+
+/*.form-card:hover {
+  transform: scale(1.02);
+  box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.25);
+}*/
+
+/* Título centrado */
+.form-title {
+  text-align: center;
+  color: var(--h2Color);
+  font-family: var(--h2Font);
+  margin-bottom: 20px;
+}
+
+/* Labels */
+.form-card label {
+  color: var(#f7f7f5);
+  font-family: var(--pFont);
+  font-size: 18px;
+  font-weight: 500;
+}
+
+/* Inputs */
+.form-card input {
+  border-radius: 10px !important;
+  padding: 12px !important;
+  font-family: var(--pFont);
+  color:#e5d8c4 ;
+}
+
+/* Botón */
+.form-card .btn-primary {
+  background-color: var(--titleMision) !important;
+  border: none;
+  border-radius: 10px;
+  padding: 12px;
+  font-size: 20px;
+  font-family: var(--pFont);
+  transition: 0.3s ease;
+}
+
+.form-card .btn-primary:hover {
+  background-color: var(--footerLinkHover) !important;
+  transform: scale(1.03);
+}
