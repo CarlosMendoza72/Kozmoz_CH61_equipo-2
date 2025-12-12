@@ -12,12 +12,12 @@ document.getElementById('registrationForm').addEventListener('submit', function(
     document.querySelectorAll('.error').forEach(el => el.innerText = '');
 
     // 2. Obtener valores de los campos
-    const fullName = document.getElementById('fullName').value.trim();
-    const lastName = document.getElementById('lastName').value.trim();
-    const phone = document.getElementById('phone').value.trim();
-    const email = document.getElementById('email').value.trim();
+    const fullName = document.getElementById('nombres').value.trim();
+    const lastName = document.getElementById('apellidos').value.trim();
+    const phone = document.getElementById('telefono').value.trim();
+    const email = document.getElementById('correo').value.trim();
     const password = document.getElementById('password').value;
-    const confirmPassword = document.getElementById('confirmPassword').value;
+    const confirmPassword = document.getElementById('password1').value;
 
     let isValid = true;
 
