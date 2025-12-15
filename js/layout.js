@@ -106,7 +106,7 @@ function load_footer () {
     <div class="footer-column">
       <h4>Mi cuenta</h4>
       <ul>
-        <li><a href="#">Iniciar sesión</a></li>
+        <li><a href="./perfil.html">Iniciar sesión</a></li>
         <li><a href="./registro.html">Crear cuenta</a></li>
         <li><a href="./carrito.html">Mis pedidos</a></li>
         <li><a href="./carrito.html">Favoritos</a></li>
