@@ -1,91 +1,86 @@
-  // Regex
-    const regexNombre = /^(?=(?:.*[A-Za-zÁÉÍÓÚáéíóúÑñ]){3,})[A-Za-zÁÉÍÓÚáéíóúÑñ]+(?:\s[A-Za-zÁÉÍÓÚáéíóúÑñ]+){0,4}$/;
-    const regexEmail = /^[A-Za-z0-9]+([._%+-]?[A-Za-z0-9]+)*@[A-Za-z0-9-]+(\.[A-Za-z0-9-]+)*\.[A-Za-z]{2,}$/;
-    const regexSinEspacios = /^\S+$/;
-    const regexTel = /^(?:\+52\s*)?[1-9]\d(?:[\s-]?\d{4}){2}$/;
-    const regexpassword = /(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$"/;
+const formRegistro = document.getElementById("loginForm");
 
-document.getElementById('registrationForm').addEventListener('submit', function(event) {
-    event.preventDefault(); // Previene el envío automático del formulario
+// Regex
+const regexNombre = /^(?=(?:.*[A-Za-zÁÉÍÓÚáéíóúÑñ]){3,})[A-Za-zÁÉÍÓÚáéíóúÑñ]+(?:\s[A-Za-zÁÉÍÓÚáéíóúÑñ]+){0,4}$/;
+const regexEmail = /^[A-Za-z0-9]+([._%+-]?[A-Za-z0-9]+)*@[A-Za-z0-9-]+(\.[A-Za-z0-9-]+)*\.[A-Za-z]{2,}$/;
+const regexTel = /^(?:\+52\s*)?[1-9]\d(?:[\s-]?\d{4}){2}$/;
+const regexSinEspacios = /^\S+$/;
+const regexPassword = /^(?=.*[A-Z])(?=.*\d)(?=.*[^\w\s])\S{8,}$/;
 
-    // 1. Limpiar errores previos
-    document.querySelectorAll('.error').forEach(el => el.innerText = '');
+formRegistro.addEventListener("submit", function (event) {
+    event.preventDefault();
 
-    // 2. Obtener valores de los campos
-    const fullName = document.getElementById('nombres').value.trim();
-    const lastName = document.getElementById('apellidos').value.trim();
-    const phone = document.getElementById('telefono').value.trim();
-    const email = document.getElementById('correo').value.trim();
-    const password = document.getElementById('password').value;
-    const confirmPassword = document.getElementById('password1').value;
+    let esValido = true;
 
-    let isValid = true;
+    // Inputs
+    const nombre = document.getElementById("nombre");
+    const apellidos = document.getElementById("apellidos");
+    const telefono = document.getElementById("telefono");
+    const correo = document.getElementById("correo");
+    const password = document.getElementById("password");
+    const password1 = document.getElementById("password1");
 
-    // 3. Validaciones de campos vacíos y longitud
-    if (fullName === '') {
-        document.getElementById('fullNameError').innerText = 'El nombre completo es obligatorio.';
-        isValid = false;
-    }
-     if (lastName === '') {
-        document.getElementById('lastNameError').innerText = 'El apellido es obligatorio.';
-        isValid = false;
-    }
-    if (phone === '') {
-        document.getElementById('phoneError').innerText = 'El número de teléfono es obligatorio.';
-        isValid = false;
-    }
-    if (email === '') {
-        document.getElementById('emailError').innerText = 'El email es obligatorio.';
-        isValid = false;
-    }
-    if (!regexSinEspacios.test(password)){
-        console.log("La contraseña no debe tener espacios.");
-        document.getElementById('passwordError').innerText = 'La contraseña no debe tener espacios.';
-        isValid = false;
-    }
-    if (password.length < 8) { // Ejemplo de longitud mínima de 8 caracteres.
-       console.log("La contraseña debe contener al menos 8 caracteres.");
-        document.getElementById('passwordError').innerText = 'La contraseña debe tener al menos 8 caracteres.';
-        isValid = false;
-    }
+    // ===== VALIDACIONES =====
 
-    // 4. Validación de coincidencia de contraseñas
-    if (password !== confirmPassword) {
-        console.log("Las contraseñas no coinciden, papito ;)");
-        document.getElementById('confirmPasswordError').innerText = 'Las contraseñas no coinciden.';
-        isValid = false;
-    }
+    esValido &= validarRegex(nombre, regexNombre);
+    esValido &= validarRegex(apellidos, regexNombre);
+    esValido &= validarRegex(telefono, regexTel);
+    esValido &= validarRegex(correo, regexEmail);
+    esValido &= validarPassword(password);
+    esValido &= validarPasswordsIguales(password, password1);
 
-    // 5. Validación de formato de Email usando RegEx
-    if (!regexEmail.test(email)) {
-        document.getElementById('emailError').innerText = 'El formato del email no es válido.';
-        isValid = false;
-    }
-// 6. Validación de formato de Teléfono usando RegEx (ejemplo para 10 dígitos)
-    if (!regexTel.test(phone)) {
-        document.getElementById('phoneError').innerText = 'El teléfono debe tener 10 dígitos numéricos.';
-        isValid = false;
-    }
+    formRegistro.classList.add("was-validated");
 
-    // 7. Procesar si todo es válido
-    if (isValid) {
-        // Crear objeto JSON con los datos del usuario
-        const userData = {
-            fullName: fullName,
-            lastName: lastName,
-            phone: phone,
-            email: email,
-            // Nota: nunca se debe almacenar contraseñas en texto plano en localStorage en una aplicación real/de producción.
-            password: password 
-        };
+    if (!esValido) return;
 
-        // Convertir el objeto a cadena JSON y guardar en localStorage
-        localStorage.setItem('currentUser', JSON.stringify(userData));
-
-        alert('¡Registro exitoso! Datos guardados localmente.');
-        // Limpiar el formulario
-        event.target.reset();
-    } else {
-        alert('Por favor, corrige los errores en el formulario.');
-    }
+    alert("¡Registro exitoso!");
+    formRegistro.reset();
+    formRegistro.classList.remove("was-validated");
 });
+
+// Funciones
+
+function validarRegex(input, regex) {
+    if (!regex.test(input.value.trim())) {
+        marcarInvalido(input);
+        return false;
+    }
+    marcarValido(input);
+    return true;
+}
+
+function validarPassword(input) {
+    if (
+        input.value.length < 8 ||
+        !regexSinEspacios.test(input.value)
+    ) {
+        marcarInvalido(input);
+        return false;
+    }
+
+    if (!regexPassword.test(input.value)) {
+        marcarInvalido(input);
+        return false;
+    }
+    marcarValido(input);
+    return true;
+}
+
+function validarPasswordsIguales(p1, p2) {
+    if (p1.value !== p2.value || p2.value === "") {
+        marcarInvalido(p2);
+        return false;
+    }
+    marcarValido(p2);
+    return true;
+}
+
+function marcarInvalido(input) {
+    input.classList.add("is-invalid");
+    input.style.border = "thin solid red";
+}
+
+function marcarValido(input) {
+    input.classList.remove("is-invalid");
+    input.style.border = "thin solid gray";
+}
