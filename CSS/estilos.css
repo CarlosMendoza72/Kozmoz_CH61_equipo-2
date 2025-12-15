@@ -549,3 +549,58 @@ textarea.contacto {
   background-color: var(--footerLinkHover) !important;
   transform: scale(1.03);
 }
+
+
+/*PERIL*/
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--bgColor);
+    min-height: 100vh; 
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; 
+}
+
+.login-wrapper {
+    max-width: 600px; 
+    width: 90%; 
+    padding: 30px;
+    background-color: #ffffff; 
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.h1-login {
+    color: var(--h2Color); 
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 5px;
+} 
+
+.h2-login {
+    color: var(--h2Color); 
+    font-family: var(--h2Font); 
+    font-size: 1.25rem;
+    text-align: center;
+    margin-bottom: 30px; 
+}
+
+.btn-primary {
+    background-color: var(--footerBtnBg);
+    border-color: var(--footerBtnBg); 
+    color: var(--footerBtnText); 
+    font-weight: 600;
+}
+
+.btn-primary:hover {
+    background-color: var(--titleMision);
+    border-color: var(--titleMision);
+}
+
+.error-message {
+    color: #dc3545;
+    font-size: 0.85em;
+    min-height: 1.5em; 
+}
