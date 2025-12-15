@@ -33,33 +33,46 @@ formRegistro.addEventListener("submit", function (event) {
 
     if (!esValido) return;
 
-    // === Crear el objeto JSON con los datos del formulario ===
-    const usuario = {
+    const usuariosPrevios = JSON.parse(localStorage.getItem("usuarios")) || [];
+
+    const existe = usuariosPrevios.some(u => u.correo === correo.value.trim());
+    
+    if (existe) {
+        alert("Este correo ya está registrado.");
+        marcarInvalido(correo);
+        return;
+    }
+
+    // Crea el objeto
+    const nuevoUsuario = {
+        id: Date.now(), 
         nombre: nombre.value.trim(),
         apellidos: apellidos.value.trim(),
         telefono: telefono.value.trim(),
         correo: correo.value.trim(),
-        password: password.value 
+        password: btoa(password.value) 
     };
 
-    // === Almacenar en localStorage ===
-    localStorage.setItem("usuarioRegistrado", JSON.stringify(usuario));
+    // Guardar
+    usuariosPrevios.push(nuevoUsuario);
+    localStorage.setItem("usuarios", JSON.stringify(usuariosPrevios));
+
 
     alert("¡Registro exitoso!");
-    
-    
     formRegistro.reset();
     formRegistro.classList.remove("was-validated");
     
+    
+    const inputs = formRegistro.querySelectorAll("input");
+    inputs.forEach(inp => inp.style.border = ""); 
 });
 // Guardar los datos 
-    const datosGuardados = localStorage.getItem("usuarioRegistrado");
+const usuariosEnBaseDeDatos = JSON.parse(localStorage.getItem("usuarios"));
 
-if (datosGuardados) {
-    const usuarioObjeto = JSON.parse(datosGuardados);
-    console.log("Nombre guardado:", usuarioObjeto.nombre);
+if (usuariosEnBaseDeDatos) {
+    console.log(`Hay ${usuariosEnBaseDeDatos.length} usuarios registrados.`);
+    console.table(usuariosEnBaseDeDatos); 
 }
-
 // Funciones
 
 function validarRegex(input, regex) {
