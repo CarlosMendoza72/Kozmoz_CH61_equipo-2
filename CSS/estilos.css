@@ -497,11 +497,11 @@ textarea.contacto {
 .form-card {
   max-width: 650px;
   margin: 60px auto;
-  background: #b46e4c;
+  background: var(--bgColor);
   padding: 40px 35px;
   border-radius: 20px;
-  border: 2px solid var(--titleMision);
- /* box-shadow: 0px 6px 18px rgba(0, 0, 0, 0.18);*/
+  /* border: 2px solid var(--titleMision); */
+ box-shadow: 0px 6px 18px rgba(0.18, 0.18, 0.18, 0.18);
   transition: 0.3s ease-in-out;
 }
 
@@ -513,17 +513,18 @@ textarea.contacto {
 /* Título centrado */
 .form-title {
   text-align: center;
-  color: var(--h2Color);
+  color: var(--bgColor);
   font-family: var(--h2Font);
   margin-bottom: 20px;
 }
 
 /* Labels */
 .form-card label {
-  color: var(#f7f7f5);
+  color: var(--h2Color);
   font-family: var(--pFont);
   font-size: 18px;
   font-weight: 500;
+  text-align: center;
 }
 
 /* Inputs */
