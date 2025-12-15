@@ -33,10 +33,32 @@ formRegistro.addEventListener("submit", function (event) {
 
     if (!esValido) return;
 
+    // === Crear el objeto JSON con los datos del formulario ===
+    const usuario = {
+        nombre: nombre.value.trim(),
+        apellidos: apellidos.value.trim(),
+        telefono: telefono.value.trim(),
+        correo: correo.value.trim(),
+        password: password.value 
+    };
+
+    // === Almacenar en localStorage ===
+    localStorage.setItem("usuarioRegistrado", JSON.stringify(usuario));
+
     alert("¡Registro exitoso!");
+    
+    
     formRegistro.reset();
     formRegistro.classList.remove("was-validated");
+    
 });
+// Guardar los datos 
+    const datosGuardados = localStorage.getItem("usuarioRegistrado");
+
+if (datosGuardados) {
+    const usuarioObjeto = JSON.parse(datosGuardados);
+    console.log("Nombre guardado:", usuarioObjeto.nombre);
+}
 
 // Funciones
 
@@ -84,3 +106,4 @@ function marcarValido(input) {
     input.classList.remove("is-invalid");
     input.style.border = "thin solid gray";
 }
+
