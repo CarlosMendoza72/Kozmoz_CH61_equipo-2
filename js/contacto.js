@@ -28,7 +28,7 @@ if (formContacto) {
     // tipoCliente
     if (tipoCliente.value === "") {
       tipoCliente.classList.add("is-invalid");
-      tipoCliente.style.border = "thin solid red"; // thin red
+      tipoCliente.style.border = "thin solid red";
       esValido = false;
     } else {
       tipoCliente.classList.remove("is-invalid");
