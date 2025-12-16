@@ -32,22 +32,20 @@
   <!-- NavBar -->
   <div id="navbar"></div>
 
-  <!-- Contacto -->
-
-  <div class="container contacto-container">
-    <h1 class="contacto">Contáctanos</h1>
-    <!-- <h2 class="text-center mb-3 contacto">
-      Dudas, aclaraciones y sugerencias
-    </h2> -->
+      <h1 class="contacto">Contáctanos</h1>
     <p class="text-center mb-4 contacto">
       Te enviaremos lo antes posible una respuesta personalizada
       según tus necesidades.
     </p>
 
-    <div class="row justify-content-center contacto">
-      <div class="col-md-7 mx-auto">
+  <!-- Contacto -->
+<div class="form-card formRegistro">
+    <!-- <div class="container contacto-container"> -->
+
+    <!-- <div class="row justify-content-center contacto"> -->
+      <!-- <div class="col-md-7 mx-auto"> -->
         <form id="formContacto" novalidate>
-          <div class="mb-3">
+          <div class="mb-3 row justify-content-center">
             <label class="form-label contacto">Tipo de usuario</label>
             <select id="tipoCliente" name="tipoCliente" class="form-select contacto" required>
               <option value="" class="contacto">Selecciona una opción</option>
@@ -59,7 +57,7 @@
             <div class="invalid-feedback contacto">Selecciona una opción.</div>
           </div>
 
-          <div class="mb-3">
+          <div class="mb-3 row justify-content-center">
             <label for="nombre" class="form-label contacto">Nombre (s)</label>
             <input type="text" id="nombre" name="nombre" class="contacto" required>
             <div class="invalid-feedback">
@@ -67,7 +65,7 @@
             </div>
           </div>
 
-          <div class="mb-3">
+          <div class="mb-3 row justify-content-center"">
             <label for="nombre" class="form-label contacto">Apellido (s)</label>
             <input type="text" id="apellidoPat" name="apellido" class="contacto" required>
             <div class="invalid-feedback">
@@ -75,7 +73,7 @@
             </div>
           </div>
 
-          <div class="mb-3">
+          <div class="mb-3 row justify-content-center"">
             <label for="telefono" class="form-label contacto">Número telefónico</label>
             <input type="text" id="telefono" name="telefono" class="contacto" placeholder="+52  . . ." required>
             <div class="invalid-feedback">
@@ -83,13 +81,13 @@
             </div>
           </div>
 
-          <div class="mb-3">
+          <div class="mb-3 row justify-content-center"">
             <label for="email" class="form-label contacto">Correo electrónico</label>
             <input type="email" id="email" name="correo" class="contacto" placeholder="email@example.com" required>
             <div class="invalid-feedback">Ingresa un correo válido.</div>
           </div>
 
-          <div class="mb-3">
+          <div class="mb-3 row justify-content-center"">
             <label for="mensaje" class="form-label contacto">Especifica duda, aclaración o sugerencia</label>
             <textarea id="mensaje" name="mensaje" class="contacto" rows="4" placeholder="Mínimo 10 caracteres" required></textarea>
             <div class="invalid-feedback">Escribe tu mensaje.</div>
@@ -102,9 +100,11 @@
             ¡Gracias! Te contactaremos pronto.
           </p>
         </form>
-      </div>
-    </div>
-  </div>
+      <!-- </div> -->
+    <!-- </div> -->
+  <!-- </div> -->
+</div>
+
 
   <!--Footer-->
   <div id="footer"></div>

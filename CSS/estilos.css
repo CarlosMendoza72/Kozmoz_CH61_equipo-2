@@ -313,9 +313,10 @@ label.contacto {
 input.contacto,
 textarea.contacto,
 select.contacto {
+  height: 45px;
   width: 100%;
   /* Responsivo */
-  max-width: 500px;
+  max-width: 400px;
   font-size: 18px;
   padding: 8px;
   border-radius: 8px;
@@ -340,13 +341,12 @@ textarea.contacto {
 }
 
 .contacto-boton {
-  width: 200px;
-  height: 50px;
-  font-size: 20px;
+  height: 40px;
+  font-size: 18px;
   background-color: var(--titleMision);
   color: var(--bgColor);
   border: 1px solid #b46e4c !important;
-  margin: 20px auto 8rem auto;
+  margin: 20px auto 2rem auto;
   display: block;
   border-radius: 8px;
 }
@@ -495,13 +495,13 @@ textarea.contacto {
 
 /* Tarjeta donde va el formulario */
 .form-card {
-  max-width: 650px;
+  max-width: 500px;
   margin: 60px auto;
   background: var(--bgColor);
-  padding: 40px 35px;
+  padding: 35px 35px;
   border-radius: 20px;
   /* border: 2px solid var(--titleMision); */
- box-shadow: 0px 6px 18px rgba(0.18, 0.18, 0.18, 0.18);
+ box-shadow: 0px 0px 18px rgba(0.18, 0.18, 0.18, 0.18);
   transition: 0.3s ease-in-out;
 }
 
@@ -532,7 +532,7 @@ textarea.contacto {
   border-radius: 10px !important;
   padding: 12px !important;
   font-family: var(--pFont);
-  color:#e5d8c4 ;
+  color:var(--pColor) ;
 }
 
 /* Botón */
@@ -604,4 +604,28 @@ textarea.contacto {
     color: #dc3545;
     font-size: 0.85em;
     min-height: 1.5em; 
+}
+
+/* ========================== Registro/login ====================================== */
+
+a.fw-semibold {
+  text-decoration: none;
+  color: inherit;
+}
+
+.toggle-boton {
+  height: 35px;
+  font-size: 15px;
+  background-color: var(--titleMision);
+  color: var(--bgColor);
+  border: 1px solid #b46e4c !important;
+  margin: 20px auto 2rem auto;
+  display: block;
+  border-radius: 8px;
+}
+
+.imagen-login {
+  max-width: 90%;
+  border-radius: 12px;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
 }
