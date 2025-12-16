@@ -1,4 +1,4 @@
-// Barra de navegación
+// Barra de navegación ==============================================================
 function load_navbar() {
   document.getElementById("navbar").innerHTML = `
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -58,7 +58,7 @@ function load_navbar() {
         </div>
     </nav>`;
 
-      // 🔹 LÓGICA DE SESIÓN (AHORA EN EL MOMENTO CORRECTO)
+// Hacer que el navbar nos avise que tenemos sesión iniciada
   const usuarioActivo = JSON.parse(localStorage.getItem("usuarioActivo"));
   if (!usuarioActivo) return;
 
@@ -83,9 +83,10 @@ function load_navbar() {
   liLogout.appendChild(btnLogout);
   navList.appendChild(liSaludo);
   navList.appendChild(liLogout);
+  // aviso de sesión iniciada
 } // load_navBar
 
-// Pie de página
+// Pie de página ===================================================================
 function load_footer() {
   document.getElementById("footer").innerHTML = `  
     <footer class="footer">
@@ -154,6 +155,3 @@ function load_footer() {
   </div>
 </footer>`;
 } // load_footer
-
-// Hacer que el navbar nos avise que tenemos sesión iniciada
-// aviso de sesión iniciada
