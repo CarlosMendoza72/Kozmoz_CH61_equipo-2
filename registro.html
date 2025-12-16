@@ -51,7 +51,7 @@
 
     <!-- Formulario de Registro -->
     <div class="form-card formRegistro">
-      <form id="loginForm" novalidate>
+      <form id="registroForm" novalidate>
         <!-- Nombre -->
         <div class="mb-3 row justify-content-center">
           <label for="nombre" class="form-label contacto">Nombre(s)</label>
@@ -84,7 +84,9 @@
 
         <!-- Contraseña -->
         <div class="mb-3 row justify-content-center">
-          <label for="password" class="form-label contacto">Contraseña (mínimo 8 caracteres)</label>
+          <label for="password" class="form-label contacto"
+            >Contraseña (mínimo 8 caracteres)</label
+          >
           <input
             type="password"
             id="password"
@@ -127,7 +129,7 @@
 
         <p class="text-center mt-3">¿Ya tienes una cuenta?</p>
         <div class="text-center mt-4">
-          <button type="submit" class="btn fw-bold contacto-boton">
+          <button type="button" class="btn fw-bold contacto-boton">
             <a href="perfil.html" class="fw-semibold">Inicia sesión</a>
           </button>
         </div>

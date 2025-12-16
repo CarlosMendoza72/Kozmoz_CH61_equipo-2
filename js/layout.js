@@ -4,7 +4,7 @@ function load_navbar() {
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
 
-            <a class="navbar-brand logo-text" href="#">
+            <a class="navbar-brand logo-text" href="./index.html">
                 K<span class="icon"><svg xmlns="http://www.w3.org/2000/svg" height="32px" viewBox="0 -960 960 960"
                         width="32px" fill="#e3e3e3">
                         <path
@@ -50,13 +50,39 @@ function load_navbar() {
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="./objectForm.html">Formulario</a>
+                        <a class="nav-link" href="./formulario.html">Formulario</a>
                     </li>
 
                 </ul>
             </div>
         </div>
     </nav>`;
+
+      // 🔹 LÓGICA DE SESIÓN (AHORA EN EL MOMENTO CORRECTO)
+  const usuarioActivo = JSON.parse(localStorage.getItem("usuarioActivo"));
+  if (!usuarioActivo) return;
+
+  const navList = document.querySelector("#navbar .navbar-nav");
+
+  const liSaludo = document.createElement("li");
+  liSaludo.className = "nav-item d-flex align-items-center text-white me-3";
+  liSaludo.textContent = `Hola, ${usuarioActivo.nombre}`;
+
+  const liLogout = document.createElement("li");
+  liLogout.className = "nav-item";
+
+  const btnLogout = document.createElement("button");
+  btnLogout.className = "btn btn-sm btn-outline-light ms-2";
+  btnLogout.textContent = "Cerrar sesión";
+
+  btnLogout.addEventListener("click", () => {
+    localStorage.removeItem("usuarioActivo");
+    window.location.href = "perfil.html";
+  });
+
+  liLogout.appendChild(btnLogout);
+  navList.appendChild(liSaludo);
+  navList.appendChild(liLogout);
 } // load_navBar
 
 // Pie de página
@@ -128,3 +154,6 @@ function load_footer() {
   </div>
 </footer>`;
 } // load_footer
+
+// Hacer que el navbar nos avise que tenemos sesión iniciada
+// aviso de sesión iniciada
