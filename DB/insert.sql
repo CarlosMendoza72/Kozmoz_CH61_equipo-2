@@ -1,106 +1,58 @@
--- MySQL Workbench Forward Engineering
+-- =====================================================
+-- INSERCIÓN DE DATOS DE PRUEBA
+-- =====================================================
 
-SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
-SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
-SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';
-
--- -----------------------------------------------------
--- Schema Kozmoz
--- -----------------------------------------------------
+USE `Kozmoz`;
 
 -- -----------------------------------------------------
--- Schema Kozmoz
+-- 1. Tabla: category
 -- -----------------------------------------------------
-CREATE SCHEMA IF NOT EXISTS `Kozmoz` DEFAULT CHARACTER SET utf8 ;
-USE `Kozmoz` ;
+INSERT INTO `category` (`names`) VALUES
+('Ficción'),
+('Ciencia'),
+('Historia'),
+('Fantasía'),
+('Biografías');
 
 -- -----------------------------------------------------
--- Table `Kozmoz`.`users`
+-- 2. Tabla: users
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `Kozmoz`.`users` (
-  `idUser` INT NOT NULL AUTO_INCREMENT,
-  `names` VARCHAR(45) NOT NULL,
-  `email` VARCHAR(45) NOT NULL,
-  `password` VARCHAR(45) NOT NULL,
-  `creationDate` DATETIME NOT NULL,
-  PRIMARY KEY (`idUser`))
-ENGINE = InnoDB;
-
+INSERT INTO `users` (`names`, `email`, `password`, `creationDate`) VALUES
+('Juan Pérez', 'juan@mail.com', 'pass123', NOW()),
+('Maria Garcia', 'maria@mail.com', 'mery789', NOW()),
+('Carlos Ruiz', 'cruiz@mail.com', 'carlos01', NOW()),
+('Ana López', 'ana@mail.com', 'ana_pass', NOW()),
+('Luis Sosa', 'luis@mail.com', 'luis999', NOW());
 
 -- -----------------------------------------------------
--- Table `Kozmoz`.`orders`
+-- 3. Tabla: book
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `Kozmoz`.`orders` (
-  `idOrder` INT NOT NULL AUTO_INCREMENT,
-  `orderDate` DATETIME NOT NULL,
-  `total` DECIMAL(10,2) NOT NULL,
-  `users_idUser` INT NOT NULL,
-  PRIMARY KEY (`idOrder`),
-  INDEX `fk_orders_users_idx` (`users_idUser` ASC) VISIBLE,
-  CONSTRAINT `fk_orders_users`
-    FOREIGN KEY (`users_idUser`)
-    REFERENCES `Kozmoz`.`users` (`idUser`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB;
-
+INSERT INTO `book`
+(`title`, `authors`, `price`, `stock`, `creationDate`, `category_idCategory`) VALUES
+('El Quijote', 'Miguel de Cervantes', 25.50, 10, NOW(), 1),
+('Breve Historia del Tiempo', 'Stephen Hawking', 18.00, 5, NOW(), 2),
+('Sapiens', 'Yuval Noah Harari', 22.00, 8, NOW(), 3),
+('Harry Potter', 'J.K. Rowling', 30.00, 15, NOW(), 4),
+('Steve Jobs', 'Walter Isaacson', 20.00, 12, NOW(), 5);
 
 -- -----------------------------------------------------
--- Table `Kozmoz`.`category`
+-- 4. Tabla: orders
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `Kozmoz`.`category` (
-  `idCategory` INT NOT NULL AUTO_INCREMENT,
-  `names` VARCHAR(45) NOT NULL,
-  PRIMARY KEY (`idCategory`))
-ENGINE = InnoDB;
-
-
--- -----------------------------------------------------
--- Table `Kozmoz`.`book`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `Kozmoz`.`book` (
-  `idBook` INT NOT NULL AUTO_INCREMENT,
-  `title` VARCHAR(45) NOT NULL,
-  `authors` VARCHAR(100) NOT NULL,
-  `price` DECIMAL(10,2) NOT NULL,
-  `stock` INT NOT NULL,
-  `creationDate` DATETIME NOT NULL,
-  `category_idCategory` INT NOT NULL,
-  PRIMARY KEY (`idBook`),
-  INDEX `fk_book_category1_idx` (`category_idCategory` ASC) VISIBLE,
-  CONSTRAINT `fk_book_category1`
-    FOREIGN KEY (`category_idCategory`)
-    REFERENCES `Kozmoz`.`category` (`idCategory`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB;
-
+INSERT INTO `orders` (`orderDate`, `total`, `users_idUser`) VALUES
+(NOW(), 51.00, 1),
+(NOW(), 18.00, 2),
+(NOW(), 52.00, 3),
+(NOW(), 30.00, 4),
+(NOW(), 20.00, 5);
 
 -- -----------------------------------------------------
--- Table `Kozmoz`.`orders_has_book`
+-- 5. Tabla: orders_has_book
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `Kozmoz`.`orders_has_book` (
-  `orderItems` INT NOT NULL AUTO_INCREMENT,
-  `orderId` INT NOT NULL,
-  `bookId` INT NOT NULL,
-  `quantity` INT NOT NULL,
-  `price` DECIMAL(10,2) NOT NULL,
-  PRIMARY KEY (`orderItems`),
-  INDEX `fk_orders_has_book_book1_idx` (`bookId` ASC) VISIBLE,
-  INDEX `fk_orders_has_book_orders1_idx` (`orderId` ASC) VISIBLE,
-  CONSTRAINT `fk_orders_has_book_orders1`
-    FOREIGN KEY (`orderId`)
-    REFERENCES `Kozmoz`.`orders` (`idOrder`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_orders_has_book_book1`
-    FOREIGN KEY (`bookId`)
-    REFERENCES `Kozmoz`.`book` (`idBook`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB;
-
-
-SET SQL_MODE=@OLD_SQL_MODE;
-SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
-SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
+INSERT INTO `orders_has_book`
+(`orderId`, `bookId`, `quantity`, `price`) VALUES
+(1, 1, 2, 25.50),
+(2, 2, 1, 18.00),
+(3, 3, 1, 22.00),
+(3, 4, 1, 30.00),
+(4, 4, 1, 30.00),
+(5, 5, 1, 20.00);

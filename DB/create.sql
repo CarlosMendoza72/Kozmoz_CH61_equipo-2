@@ -1,55 +1,89 @@
+-- MySQL Workbench Forward Engineering
+-- =====================================================
+-- CREACIÓN DE BASE DE DATOS Y ESTRUCTURA
+-- =====================================================
+
+SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
+SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
+SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';
+
+CREATE SCHEMA IF NOT EXISTS `Kozmoz` DEFAULT CHARACTER SET utf8;
 USE `Kozmoz`;
 
--- 1. Tabla: category
-INSERT INTO `category` (`names`) VALUES 
-('Ficción'), ('Ciencia'), ('Historia'), ('Fantasía'), ('Biografías');
+-- -----------------------------------------------------
+-- Table: users
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `users` (
+  `idUser` INT NOT NULL AUTO_INCREMENT,
+  `names` VARCHAR(45) NOT NULL,
+  `email` VARCHAR(45) NOT NULL,
+  `password` VARCHAR(45) NOT NULL,
+  `creationDate` DATETIME NOT NULL,
+  PRIMARY KEY (`idUser`)
+) ENGINE = InnoDB;
 
--- 2. Tabla: users
-INSERT INTO `users` (`names`, `email`, `password`, `creationDate`) VALUES 
-('Juan Pérez', 'juan@mail.com', 'pass123', NOW()),
-('Maria Garcia', 'maria@mail.com', 'mery789', NOW()),
-('Carlos Ruiz', 'cruiz@mail.com', 'carlos01', NOW()),
-('Ana López', 'ana@mail.com', 'ana_pass', NOW()),
-('Luis Sosa', 'luis@mail.com', 'luis999', NOW());
+-- -----------------------------------------------------
+-- Table: category
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `category` (
+  `idCategory` INT NOT NULL AUTO_INCREMENT,
+  `names` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`idCategory`)
+) ENGINE = InnoDB;
 
--- 3. Tabla: book
-INSERT INTO `book` (`title`, `authors`, `price`, `stock`, `creationDate`, `category_idCategory`) VALUES 
-('El Quijote', 'Miguel de Cervantes', 25.50, 10, NOW(), 1),
-('Breve Historia del Tiempo', 'Stephen Hawking', 18.00, 5, NOW(), 2),
-('Sapiens', 'Yuval Noah Harari', 22.00, 8, NOW(), 3),
-('Harry Potter', 'J.K. Rowling', 30.00, 15, NOW(), 4),
-('Steve Jobs', 'Walter Isaacson', 20.00, 12, NOW(), 5);
+-- -----------------------------------------------------
+-- Table: book
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `book` (
+  `idBook` INT NOT NULL AUTO_INCREMENT,
+  `title` VARCHAR(45) NOT NULL,
+  `authors` VARCHAR(100) NOT NULL,
+  `price` DECIMAL(10,2) NOT NULL,
+  `stock` INT NOT NULL,
+  `creationDate` DATETIME NOT NULL,
+  `category_idCategory` INT NOT NULL,
+  PRIMARY KEY (`idBook`),
+  INDEX `fk_book_category_idx` (`category_idCategory`),
+  CONSTRAINT `fk_book_category`
+    FOREIGN KEY (`category_idCategory`)
+    REFERENCES `category` (`idCategory`)
+) ENGINE = InnoDB;
 
--- 4. Tabla: orders
-INSERT INTO `orders` (`orderDate`, `total`, `users_idUser`) VALUES 
-(NOW(), 51.00, 1),
-(NOW(), 18.00, 2),
-(NOW(), 52.00, 3),
-(NOW(), 30.00, 4),
-(NOW(), 20.00, 5);
+-- -----------------------------------------------------
+-- Table: orders
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `orders` (
+  `idOrder` INT NOT NULL AUTO_INCREMENT,
+  `orderDate` DATETIME NOT NULL,
+  `total` DECIMAL(10,2) NOT NULL,
+  `users_idUser` INT NOT NULL,
+  PRIMARY KEY (`idOrder`),
+  INDEX `fk_orders_users_idx` (`users_idUser`),
+  CONSTRAINT `fk_orders_users`
+    FOREIGN KEY (`users_idUser`)
+    REFERENCES `users` (`idUser`)
+) ENGINE = InnoDB;
 
--- 5. Tabla: orders_has_book
-INSERT INTO `orders_has_book` (`orderId`, `bookId`, `quantity`, `price`) VALUES 
-(1, 1, 2, 25.50), -- Juan compró 2 Quijotes
-(2, 2, 1, 18.00), -- Maria compró 1 de Ciencia
-(3, 3, 1, 22.00), -- Carlos compró 1 Sapiens
-(3, 4, 1, 30.00), -- Carlos también compró 1 Harry Potter
-(4, 4, 1, 30.00), -- Ana compró 1 Harry Potter
-(5, 5, 1, 20.00); -- Luis compró 1 Biografía
+-- -----------------------------------------------------
+-- Table: orders_has_book
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `orders_has_book` (
+  `orderItems` INT NOT NULL AUTO_INCREMENT,
+  `orderId` INT NOT NULL,
+  `bookId` INT NOT NULL,
+  `quantity` INT NOT NULL,
+  `price` DECIMAL(10,2) NOT NULL,
+  PRIMARY KEY (`orderItems`),
+  INDEX `fk_ohb_orders_idx` (`orderId`),
+  INDEX `fk_ohb_book_idx` (`bookId`),
+  CONSTRAINT `fk_ohb_orders`
+    FOREIGN KEY (`orderId`)
+    REFERENCES `orders` (`idOrder`),
+  CONSTRAINT `fk_ohb_book`
+    FOREIGN KEY (`bookId`)
+    REFERENCES `book` (`idBook`)
+) ENGINE = InnoDB;
 
-SELECT b.title AS Libro, b.price AS Precio, c.names AS Categoria
-FROM book b
-JOIN category c ON b.category_idCategory = c.idCategory;
-
-SELECT 
-    u.names AS Cliente, 
-    o.idOrder AS Numero_Pedido, 
-    b.title AS Libro_Comprado, 
-    ohb.quantity AS Cantidad,
-    ohb.price AS Precio_Unitario
-FROM users u
-JOIN orders o ON u.idUser = o.users_idUser
-JOIN orders_has_book ohb ON o.idOrder = ohb.orderId
-JOIN book b ON ohb.bookId = b.idBook;
-
-SELECT title, stock FROM book WHERE stock < 10;
+SET SQL_MODE=@OLD_SQL_MODE;
+SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
+SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
