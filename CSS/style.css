@@ -1,0 +1,113 @@
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+}
+
+body { 
+    font-family: sans-serif; 
+}
+
+/*.slider-container {
+    width: 90%; 
+    max-width: 800px; 
+    margin: 50px auto;
+    overflow: hidden; 
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}*/
+
+.slider-container {
+  width: auto;
+  height: 550px;
+  background: linear-gradient(to right,
+      #2e2e2e,
+      #f7f7f5,
+      #e5d8c4,
+      #506078,
+      #b46e4c);
+  padding: 10px;
+  margin: 20px;
+}
+
+.slider {
+    display: flex;
+    width: 400%; 
+    animation: slideAnimation 15s infinite cubic-bezier(0.55, 0.48, 0.37, 0.92);
+}
+
+.slide {
+    width: 25%; 
+    flex-shrink: 0;
+}
+
+.card {
+    position: relative;
+    width: 300px;
+    height: 350px;
+    margin: 20px;
+}
+
+.card .face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: .5s;
+}
+
+.card .front {
+    transform: perspective(600px) rotateY(0deg);
+    box-shadow: 0 5px 10px #000;
+}
+
+.card .front img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+@keyframes slideAnimation {
+    0% {margin-left: 0%;} 
+    20% {margin-left: 0%;} 
+
+    25% {margin-left: -100%;} 
+    45% {margin-left: -100%;} 
+
+    50% { margin-left: -200%;} 
+    70% { margin-left: -200%;} 
+
+    75% {margin-left: -300%;} 
+    95% {margin-left: -300%;} 
+
+    /* 100% { transform: translateX(0%); }  =>  Vuelve a la primera */
+}
+
+
+
+/*  
+
+
+@keyframes slideAnimation {
+0% { transform: translateX(0%); } 
+20% { transform: translateX(0%); } 
+
+25% { transform: translateX(-25%); } 
+45% { transform: translateX(-25%); }
+
+50% { transform: translateX(-50%); } 
+70% { transform: translateX(-50%); } 
+
+75% { transform: translateX(-75%); } 
+95% { transform: translateX(-75%); } 
+100% { transform: translateX(0%); } 
+
+
+Efecto hover para detener la animación 
+.slider-container:hover .slider {
+    animation-play-state: paused;
+}
+*/
