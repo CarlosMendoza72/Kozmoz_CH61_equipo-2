@@ -13,7 +13,7 @@ formLogin.addEventListener("submit", function (e) {
   );
 
   if (!usuario) {
-    alert("Correo o contraseña incorrectos");
+    alertaError("Correo no registrado");
     return;
   }
 
@@ -24,6 +24,29 @@ formLogin.addEventListener("submit", function (e) {
     correo: usuario.correo
   }));
 
-  alert("Sesión iniciada");
-  window.location.href = "index.html";
+  alertaExito("Sesión iniciada", () => {
+    window.location.href = "index.html";
+  });
 });
+
+// funciones =================================================================================================
+
+function alertaError(mensaje) {
+  Swal.fire({
+    icon: "error",          // ❌ tache
+    title: "Error",
+    text: mensaje,
+    confirmButtonColor: "#d33"
+  });
+}
+
+function alertaExito(mensaje, callback) {
+  Swal.fire({
+    icon: "success",        // ✅ palomita
+    title: "Éxito",
+    text: mensaje,
+    confirmButtonColor: "#3085d6"
+  }).then(() => {
+    if (callback) callback();
+  });
+}

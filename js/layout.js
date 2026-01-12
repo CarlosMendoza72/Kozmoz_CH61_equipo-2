@@ -1,4 +1,4 @@
-// Barra de navegación ==============================================================
+// Barra de navegación =====================================================================================
 function load_navbar() {
   document.getElementById("navbar").innerHTML = `
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -86,7 +86,7 @@ function load_navbar() {
   // aviso de sesión iniciada
 } // load_navBar
 
-// Pie de página ===================================================================
+// Pie de página =====================================================================================
 function load_footer() {
   document.getElementById("footer").innerHTML = `  
     <footer class="footer">

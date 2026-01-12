@@ -38,7 +38,7 @@ formRegistro.addEventListener("submit", function (event) {
   );
 
   if (existe) {
-    alert("Este correo ya está registrado.");
+    alertaError("Este correo ya está registrado.");
     marcarInvalido(correo);
     return;
   }
@@ -64,9 +64,11 @@ formRegistro.addEventListener("submit", function (event) {
     })
   );
 
-  alert("¡Registro exitoso! Sesión iniciada.");
-  window.location.href = "index.html";
-});
+  alertaExito("¡Registro exitoso! Sesión iniciada", () => {
+    window.location.href = "index.html";
+  });
+
+});//event
 
 // funciones =================================================================
 function validarRegex(input, regex) {
@@ -113,4 +115,24 @@ function marcarInvalido(input) {
 function marcarValido(input) {
   input.classList.remove("is-invalid");
   input.style.border = "thin solid gray";
+}
+
+function alertaError(mensaje) {
+  Swal.fire({
+    icon: "error",          // ❌ tache
+    title: "Error",
+    text: mensaje,
+    confirmButtonColor: "#d33"
+  });
+}
+
+function alertaExito(mensaje, callback) {
+  Swal.fire({
+    icon: "success",        // ✅ palomita
+    title: "Éxito",
+    text: mensaje,
+    confirmButtonColor: "#3085d6"
+  }).then(() => {
+    if (callback) callback();
+  });
 }
