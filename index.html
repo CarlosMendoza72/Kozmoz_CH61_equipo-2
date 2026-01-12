@@ -29,93 +29,258 @@
 
 <body onload="load_navbar(); load_footer();">
   <!-- NavBar -->
-  <div id="navbar"></div>
+<div id="navbar"></div>
 
   <!-- Sección principal -->
 
-<link rel="stylesheet" href="./CSS/style.css">
-
+<link rel="stylesheet" href="./CSS/style.css"> 
 
 <div class="slider-container">
 
-  <h1 class="titulo">Ofertas</h1>
+  <div class="slider">
 
-      <div class="buttons">
-        <button style="margin-right: 15px;" type="button" class="btn btn-light">Catálogo</button>
-        <button style="margin-left: 15px;" type="button" class="btn btn-light">Recomendaciones</button>
+    <h1 class="titulo">Ofertas</h1>
+
+    <div class="slider-track">
+
+      <!-- Cards -->
+      <div class="card">
+        <img src="./assets/imagen1.jpg" alt="">
+        <h4>Curso de programación Java</h4>
       </div>
 
-        <div class="slider">
-           
-            <div class="card">
-                <div class="face front">
-                    <img src="./assets/imagen1.jpg" alt="">
-                    <h3>Engineering mechanics</h3>
-                </div>
-            </div>
+      <div class="card">
+        <img src="./assets/imagen3.jpg" alt="">
+        <h4>Cuaderno de ejercicios Baldor</h4>
+      </div>
 
-            <div class="card">
-                <div class="face front">
-                    <img src="./assets/imagen2.jpg" alt="">
-                    <h3>Don Quijote de la Mancha</h3>
-                </div>
-            </div>
-    
-            <div class="card">
-                <div class="face front">
-                    <img src="./assets/imagen3.jpg" alt="">
-                    <h3>Matemáticas para ingeniería</h3>
-                </div>
-            </div>
+      <div class="card">
+        <img src="./assets/imagen4.jpg" alt="">
+        <h4>It</h4>
+      </div>
 
-            <div class="card">
-                <div class="face front">
-                    <img src="./assets/imagen4.jpg" alt="">
-                    <h3>Matemáticas para ingeniería</h3>
-                </div>
-            </div>
+      <div class="card">
+        <img src="./assets/imagen7.jpg" alt="">
+        <h4>Eloquent JavaScript</h4>
+      </div>
 
-            <div class="card">
-                <div class="face front">
-                    <img src="./assets/imagen5.jpg" alt="">
-                    <h3>Matemáticas para ingeniería</h3>
-                </div>
-            </div>
+      <div class="card">
+        <img src="./assets/imagen8.jpg" alt="">
+        <h4>The linux command line</h4>
+      </div>
 
-            <div class="card">
-                <div class="face front">
-                    <img src="./assets/imagen6.jpg" alt="">
-                    <h3>Matemáticas para ingeniería</h3>
-                </div>
-            </div>
+      <div class="card">
+        <img src="./assets/imagen9.jpg" alt="">
+        <h4>Microsoft Azure Networking</h4>
+      </div>
 
-            <div class="card">
-                <div class="face front">
-                    <img src="./assets/imagen7.jpg" alt="">
-                    <h3>Matemáticas para ingeniería</h3>
-                </div>
-            </div>
+      <div class="card">
+        <img src="./assets/imagen10.jpg" alt="">
+        <h4>Ingeniería Industrial</h4>
+      </div>
 
-            <div class="card">
-                <div class="face front">
-                    <img src="./assets/imagen8.jpg" alt="">
-                    <h3>Matemáticas para ingeniería</h3>
-                </div>
-            </div>
+      <!-- Duplicado para efecto infinito -->
+      <div class="card">
+        <img src="./assets/imagen1.jpg" alt="">
+        <h4>Curso de programación Java</h4>
+      </div>
 
-            <div class="card">
-                <div class="face front">
-                    <img src="./assets/imagen9.jpg" alt="">
-                    <h3>Matemáticas para ingeniería</h3>
-                </div>
-            </div>
+      <div class="card">
+        <img src="./assets/imagen3.jpg" alt="">
+        <h4>Cuaderno de ejercicios Baldor</h4>
+      </div>
 
-        </div>
-    </div>               
+      <div class="card">
+        <img src="./assets/imagen4.jpg" alt="">
+        <h4>It</h4>
+      </div>
 
-      
-      
-  </section>
+      <div class="card">
+        <img src="./assets/imagen7.jpg" alt="">
+        <h4>Eloquent JavaScript</h4>
+      </div>
+
+      <div class="card">
+        <img src="./assets/imagen8.jpg" alt="">
+        <h4>The linux command line</h4>
+      </div>
+
+      <div class="card">
+        <img src="./assets/imagen9.jpg" alt="">
+        <h4>Microsoft Azure Networking</h4>
+      </div>
+
+      <div class="card">
+        <img src="./assets/imagen10.jpg" alt="">
+        <h4>Ingeniería Industrial</h4>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+<!--Container c/ flip cards-->
+
+<h1 class="titulo">Novedades destacadas</h1>
+
+<div class="cards-container">
+
+  <!-- Card -->
+  <div class="card">
+    <div class="card-inner">
+      <!-- Front -->
+      <div class="card-front">
+        <img src="./assets/imagen11.jpg" alt="Imagen">
+        <h3>Aprende Alemán fácil</h3>
+      </div>
+
+      <!-- Back -->
+      <div class="card-back">
+        <h3>Aprende Alemán fácil</h3>
+        <p>Este libro es tu guía completa para avanzar en el alemán, desde lo esencial hasta lo intermedio.</p>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Card -->
+  <div class="card">
+    <div class="card-inner">
+      <!-- Front -->
+      <div class="card-front">
+        <img src="./assets/imagen12.jpg" alt="Imagen">
+        <h3>Genealogía de la moral</h3>
+      </div>
+
+      <!-- Back -->
+      <div class="card-back">
+        <h3>Genealogía de la moral</h3>
+        <p>Es la obra más sombría y cruel de Friedrich Nietzsche. Su primer tratado se ocupa de la contraposición entre los conceptos de bueno y malo.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Card -->
+  <div class="card">
+    <div class="card-inner">
+      <!-- Front -->
+      <div class="card-front">
+        <img src="./assets/imagen13.jpg" alt="Imagen">
+        <h3>Anatomía humana</h3>
+      </div>
+
+      <!-- Back -->
+      <div class="card-back">
+        <h3>Anatomía humana</h3>
+        <p>Este libro hace que el texto sea cada vez más didáctico, ameno para el lector y fácil de entender, aun para los que se inician en el estudio de la anatomía.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Card -->
+  <div class="card">
+    <div class="card-inner">
+      <!-- Front -->
+      <div class="card-front">
+        <img src="./assets/imagen14.jpg" alt="Imagen">
+        <h3>Geografía Económica</h3>
+      </div>
+
+      <!-- Back -->
+      <div class="card-back">
+        <h3>Geografía Económica</h3>
+        <p>Permite al estudiante conocer la organización, interacción y transformación de los espacios productivos en el sistema capitalista y sus repercusiones sociales.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Card -->
+  <div class="card">
+    <div class="card-inner">
+      <!-- Front -->
+      <div class="card-front">
+        <img src="./assets/imagen15.jpg" alt="Imagen">
+        <h3>Anatomía y fisiología dental</h3>
+      </div>
+
+      <!-- Back -->
+      <div class="card-back">
+        <h3>Anatomía y fisiología dental</h3>
+        <p>Se centra en las aplicaciones clínicas y proporciona una visión incomparable de la anatomía práctica.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Card -->
+  <div class="card">
+    <div class="card-inner">
+      <!-- Front -->
+      <div class="card-front">
+        <img src="./assets/imagen16.jpg" alt="Imagen">
+        <h3>Adictos a la ansiedad</h3>
+      </div>
+
+      <!-- Back -->
+      <div class="card-back">
+        <h3>Adictos a la ansiedad</h3>
+        <p>En este libro innovador, el autor superventas y psicoterapeuta Owen O’Kane explora cómo, sin darnos cuenta, creamos hábitos en torno a la ansiedad.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Card -->
+  <div class="card">
+    <div class="card-inner">
+      <!-- Front -->
+      <div class="card-front">
+        <img src="./assets/imagen17.jpg" alt="Imagen">
+        <h3>Nazi-Comunismo</h3>
+      </div>
+
+      <!-- Back -->
+      <div class="card-back">
+        <h3>Nazi-Comunismo</h3>
+        <p>Con su ya clásico estilo claro y directo, Kaiser demuestra que ambas ideologías comparten raíces ideológicas similares y una esencia destructiva y totalitaria común.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Card -->
+  <div class="card">
+    <div class="card-inner">
+      <!-- Front -->
+      <div class="card-front">
+        <img src="./assets/imagen18.jpg" alt="Imagen">
+        <h3>Introducción al Derecho</h3>
+      </div>
+
+      <!-- Back -->
+      <div class="card-back">
+        <h3>Introducción al Derecho</h3>
+        <p>La obra está estructurada en tres ejes, que abordan teorías áreas del derecho de suma importancia para los estudiantes.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Card -->
+  <div class="card">
+    <div class="card-inner">
+      <!-- Front -->
+      <div class="card-front">
+        <img src="./assets/imagen19.jpg" alt="Imagen">
+        <h3>Principios de Contabilidad</h3>
+      </div>
+
+      <!-- Back -->
+      <div class="card-back">
+        <h3>Principios de Contabilidad</h3>
+        <p>Destaca la actualización de la estructura de las NIF y postulados básicos, que explica la nueva NIF A-1 MC NIF. Para alcanzar el objetivo de mejorar el proceso de aprendizaje.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
 
   <!--Footer-->
   <div id="footer"></div>
