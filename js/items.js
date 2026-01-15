@@ -95,15 +95,32 @@ const cardsContainer = document.getElementById("cards-container");
 // Función única para crear cards ==================================================
 
 function createCard(item) {
+
   const card = document.createElement("div");
   card.classList.add("card");
+
+  const cardInner = document.createElement("div");
+  cardInner.classList.add("card-inner");
+
+  // ---------- FRONT ----------
+  const cardFront = document.createElement("div");
+  cardFront.classList.add("card-front");
 
   const img = document.createElement("img");
   img.src = item.image;
   img.alt = item.title;
 
-  const title = document.createElement("h2");
-  title.textContent = item.title;
+  const titleFront = document.createElement("h3");
+  titleFront.textContent = item.title;
+
+  cardFront.append(img, titleFront);
+
+  // ---------- BACK ----------
+  const cardBack = document.createElement("div");
+  cardBack.classList.add("card-back");
+
+  const titleBack = document.createElement("h3");
+  titleBack.textContent = item.title;
 
   const description = document.createElement("p");
   description.textContent = item.description;
@@ -111,11 +128,11 @@ function createCard(item) {
   const price = document.createElement("span");
   price.textContent = `$${item.price.toFixed(2)}`;
 
-  card.appendChild(img);
-  card.appendChild(title);
-  card.appendChild(description);
-  card.appendChild(price);
+  cardBack.append(titleBack, description, price);
 
+  // ---------- ENSAMBLAR ----------
+  cardInner.append(cardFront, cardBack);
+  card.appendChild(cardInner);
   cardsContainer.appendChild(card);
 }
 

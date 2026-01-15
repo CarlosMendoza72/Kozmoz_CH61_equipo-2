@@ -77,7 +77,7 @@ function load_navbar() {
 
   btnLogout.addEventListener("click", () => {
     localStorage.removeItem("usuarioActivo");
-    window.location.href = "perfil.html";
+    window.location.href = "./perfil.html";
   });
 
   liLogout.appendChild(btnLogout);
