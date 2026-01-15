@@ -119,7 +119,7 @@ function marcarValido(input) {
 
 function alertaError(mensaje) {
   Swal.fire({
-    icon: "error",          // ❌ tache
+    icon: "error",          
     title: "Error",
     text: mensaje,
     confirmButtonColor: "#d33"
@@ -128,7 +128,7 @@ function alertaError(mensaje) {
 
 function alertaExito(mensaje, callback) {
   Swal.fire({
-    icon: "success",        // ✅ palomita
+    icon: "success",        
     title: "Éxito",
     text: mensaje,
     confirmButtonColor: "#3085d6"

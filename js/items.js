@@ -1,9 +1,13 @@
+// ======================= CONFIG ===============================================
 
-const DEFAULT_IMAGE = "via.placeholder.com";
+const STORAGE_KEY = "mis_libros";
+const DEFAULT_IMAGE = "https://via.placeholder.com/300x400?text=Libro";
 
-// Intentamos cargar de LocalStorage; si no hay nada, usamos los datos iniciales
-let books = JSON.parse(localStorage.getItem("mis_libros")) || [
-  {
+// ======================= DATA ==================================================
+
+// Cargar desde LocalStorage o usar datos iniciales
+let books = JSON.parse(localStorage.getItem(STORAGE_KEY)) || [
+    {
     title: "Microbiología y Parasitología Médicas",
     description:
       "La segunda edición de esta obra revisa y actualiza todos los capítulos e incorpora temas de candente actualidad como el SARS-CoV-2",
@@ -66,21 +70,21 @@ let books = JSON.parse(localStorage.getItem("mis_libros")) || [
     price: 600.00,
     image: "./assets/astrofisica.jpg",
   },
-  {
+    {
     title: "Cálculo Varias Variables",
     description:
       `La decimoquinta edición del aclamado "Cálculo de Thomas" llega por primera vez en español.`,
     price: 215.10,
     image: "./assets/calculoVariasVariables.jpg",
   },
-  {
+      {
     title: "Algebra Moderna",
     description:
       `La presente obra es una introducción a la llamada álgebra abstracta.`,
     price: 468.00,
     image: "./assets/algebraModerna.jpg",
   },
-  {
+        {
     title: "Sapiens",
     description:
       `Cómo la especie Homo sapiens pasó de ser nómada a sedentaria y empezó a trabajar más duro sin por ello mejorar su calidad de vida.`,
@@ -89,74 +93,112 @@ let books = JSON.parse(localStorage.getItem("mis_libros")) || [
   }
 ];
 
-const cardsContainer = document.getElementById("cards-container");
+// ======================= DOM ===================================================
 
-// 2. Función para guardar en LocalStorage =========================================
+const cardsContainer = document.getElementById("cards-container");
+const form = document.getElementById("card-form");
+
+// ======================= LOCAL STORAGE =========================================
+
 const saveToLocalStorage = () => {
-  localStorage.setItem("mis_libros", JSON.stringify(books));
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(books));
 };
 
-// 3. Función para renderizar todos los libros =====================================
+// ======================= RENDER ===============================================
+
 function renderBooks() {
-  cardsContainer.innerHTML = ""; // Limpiamos contenedor
+  cardsContainer.innerHTML = "";
   books.forEach((book, index) => createCard(book, index));
 }
 
-// 4. Función para crear una Card ==================================================
+// ======================= FLIP CARD (TU TRABAJO) ================================
+
 function createCard(item, index) {
+
   const card = document.createElement("div");
   card.classList.add("card");
 
-  const imgUrl = item.image && item.image.trim() !== "" ? item.image : DEFAULT_IMAGE;
+  const cardInner = document.createElement("div");
+  cardInner.classList.add("card-inner");
 
+  // ---------- FRONT ----------
+  const cardFront = document.createElement("div");
+  cardFront.classList.add("card-front");
 
-  card.innerHTML = `
-    <img src="${imgUrl}" alt="${item.title}">
-    <h2>${item.title}</h2>
-    <p>${item.description}</p>
-    <span class="price">$${parseFloat(item.price).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</span>
-  `;
+  const img = document.createElement("img");
+  img.src = item.image?.trim() ? item.image : DEFAULT_IMAGE;
+  img.alt = item.title;
 
+  const titleFront = document.createElement("h3");
+  titleFront.textContent = item.title;
+
+  cardFront.append(img, titleFront);
+
+  // ---------- BACK ----------
+  const cardBack = document.createElement("div");
+  cardBack.classList.add("card-back");
+
+  const titleBack = document.createElement("h3");
+  titleBack.textContent = item.title;
+
+  const description = document.createElement("p");
+  description.textContent = item.description;
+
+  const price = document.createElement("span");
+  price.textContent = `$${item.price.toFixed(2)}`;
+
+  // Acciones
+  const btnDelete = document.createElement("button");
+  btnDelete.textContent = "Eliminar";
+  btnDelete.onclick = () => deleteBook(index);
+
+  const btnEdit = document.createElement("button");
+  btnEdit.textContent = "Editar";
+  btnEdit.onclick = () => editBook(index);
+
+  cardBack.append(titleBack, description, price, btnEdit, btnDelete);
+
+  // ---------- ENSAMBLAR ----------
+  cardInner.append(cardFront, cardBack);
+  card.appendChild(cardInner);
   cardsContainer.appendChild(card);
 }
 
-// 5. Lógica de agregar libro con Alerta ===========================================
-const form = document.getElementById("card-form");
+// ======================= FORMULARIO ============================================
 
 if (form) {
   form.addEventListener("submit", e => {
     e.preventDefault();
 
-    // Confirmación antes de agregar
-    const confirmAdd = confirm("¿Estás seguro que quieres agregar el libro?");
+    if (!confirm("¿Estás seguro que quieres agregar el libro?")) return;
 
-    if (confirmAdd) {
-      const newItem = {
-        title: document.getElementById("title").value,
-        description: document.getElementById("description").value,
-        price: parseFloat(document.getElementById("price").value) || 0,
-        image: document.getElementById("image").value,
-      };
+    const newItem = {
+      title: document.getElementById("title").value,
+      description: document.getElementById("description").value,
+      price: parseFloat(document.getElementById("price").value) || 0,
+      image: document.getElementById("image").value,
+    };
 
-      books.push(newItem);
-      saveToLocalStorage();
-      renderBooks();
-      form.reset();
-    }
+    books.push(newItem);
+    saveToLocalStorage();
+    renderBooks();
+    form.reset();
   });
 }
 
-// 6. Funciones de Eliminar y Editar ==============================================
-window.deleteBook = (index) => {
+// ======================= CRUD ==================================================
+
+function deleteBook(index) {
   if (confirm("¿Seguro que deseas eliminar este libro?")) {
     books.splice(index, 1);
     saveToLocalStorage();
     renderBooks();
   }
-};
+}
 
-window.editBook = (index) => {
+function editBook(index) {
   const book = books[index];
+
   const newTitle = prompt("Nuevo título:", book.title);
   const newPrice = prompt("Nuevo precio:", book.price);
 
@@ -166,56 +208,8 @@ window.editBook = (index) => {
     saveToLocalStorage();
     renderBooks();
   }
-};
-
-// Render inicial al cargar la página
-renderBooks();
-
-
-// Clase Libro ====================================================================
-
-class Libro {
-  constructor(
-    id,
-    titulo,
-    autor,
-    editorial,
-    descripcion,
-    genero,
-    idioma,
-    numeroPaginas,
-    añoPublicacion,
-    formato,
-    edicion,
-    stock,
-    precio,
-    costoEnvio,
-    calificacionPromedio,
-    cantidadReseñas,
-    urlImagenPortada,
-    palabrasClave,
-    destacado,
-    disponible
-  ) {
-    this.id = id;
-    this.titulo = titulo;
-    this.autor = autor;
-    this.editorial = editorial;
-    this.descripcion = descripcion;
-    this.genero = genero;
-    this.idioma = idioma;
-    this.numeroPaginas = numeroPaginas;
-    this.añoPublicacion = añoPublicacion;
-    this.formato = formato;
-    this.edicion = edicion;
-    this.stock = stock;
-    this.precio = precio;
-    this.costoEnvio = costoEnvio;
-    this.calificacionPromedio = calificacionPromedio;
-    this.cantidadReseñas = cantidadReseñas;
-    this.urlImagenPortada = urlImagenPortada;
-    this.palabrasClave = palabrasClave;
-    this.destacado = destacado;
-    this.disponible = disponible;
-  }
 }
+
+// ======================= INIT ==================================================
+
+renderBooks();
