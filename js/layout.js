@@ -49,10 +49,6 @@ function load_navbar() {
                             </svg></a>
                     </li>
 
-                    <li class="nav-item">
-                        <a class="nav-link" href="./formulario.html">Formulario</a>
-                    </li>
-
                 </ul>
             </div>
         </div>
@@ -63,6 +59,19 @@ function load_navbar() {
   if (!usuarioActivo) return;
 
   const navList = document.querySelector("#navbar .navbar-nav");
+
+if (usuarioActivo.correo === "super.usuario@gmail.com") {// aqui se ajusta el usuario
+  const liFormulario = document.createElement("li");
+  liFormulario.className = "nav-item";
+
+  const linkFormulario = document.createElement("a");
+  linkFormulario.className = "nav-link";
+  linkFormulario.href = "./formulario.html";
+  linkFormulario.textContent = "Formulario";
+
+  liFormulario.appendChild(linkFormulario);
+  navList.appendChild(liFormulario); // se agrega como ultimo elemento
+}
 
   const liSaludo = document.createElement("li");
   liSaludo.className = "nav-item d-flex align-items-center text-white me-3";
