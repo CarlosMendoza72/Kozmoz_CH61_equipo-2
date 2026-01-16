@@ -148,15 +148,19 @@ function createCard(item, index) {
   price.textContent = `$${item.price.toFixed(2)}`;
 
   // Acciones
-  const btnDelete = document.createElement("button");
-  btnDelete.textContent = "Eliminar";
-  btnDelete.onclick = () => deleteBook(index);
+cardBack.append(titleBack, description, price);
 
+if (typeof IS_ADMIN !== "undefined" && IS_ADMIN) {
   const btnEdit = document.createElement("button");
   btnEdit.textContent = "Editar";
   btnEdit.onclick = () => editBook(index);
 
-  cardBack.append(titleBack, description, price, btnEdit, btnDelete);
+  const btnDelete = document.createElement("button");
+  btnDelete.textContent = "Eliminar";
+  btnDelete.onclick = () => deleteBook(index);
+
+  cardBack.append(btnEdit, btnDelete);
+}
 
   // ---------- ENSAMBLAR ----------
   cardInner.append(cardFront, cardBack);
