@@ -102,12 +102,8 @@ function load_footer() {
         <a href="#">TikTok</a>
       </div>
 
-      <form class="footer-newsletter">
-        <label>Suscríbete para recibir recomendaciones:</label>
-        <input type="email" placeholder="Tu email">
-        <button type="submit">Enviar</button>
-      </form>
-    </div>
+
+    </div> 
 
     <div class="footer-column">
       <h4>Acerca de</h4>
@@ -118,14 +114,7 @@ function load_footer() {
         <li><a href="#">Envíos y devoluciones</a></li>
       </ul>
 
-      <h4>Categorías</h4>
-      <ul>
-        <li><a href="./items.html">Astronomía</a></li>
-        <li><a href="./items.html">Física</a></li>
-        <li><a href="./items.html">Biología</a></li>
-        <li><a href="./items.html">Matemáticas</a></li>
-        <li><a href="./items.html">Ciencia</a></li>
-      </ul>
+
     </div>
 
     <div class="footer-column">
@@ -137,15 +126,7 @@ function load_footer() {
         <li><a href="./carrito.html">Favoritos</a></li>
       </ul>
 
-      <h4>Nuestra compañía</h4>
-      <ul>
-        <li><a href="./acercaDe.html">Sobre nosotros</a></li>
-        <li><a href="#">Opiniones de clientes</a></li>
-        <li><a href="#">Mejores prácticas</a></li>
-        <li><a href="./contacto.html">Contacto</a></li>
-        <li><a href="./contacto.html">Soporte</a></li>
-        <li><a href="#">Legal</a></li>
-      </ul>
+
     </div>
 
   </div>
