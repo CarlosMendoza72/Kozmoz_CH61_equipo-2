@@ -136,3 +136,46 @@ function alertaExito(mensaje, callback) {
     if (callback) callback();
   });
 }
+//=========================================================================================================
+// FETCH - USERS
+//=========================================================================================================
+
+const txtNombre = document.getElementById("nombre");
+const txtApellidos = document.getElementById("apellidos");
+const txtEmail = document.getElementById("correo");
+const txtPassword = document.getElementById("password");
+const btnRegistrar = document.getElementById("btnRegistrar");
+const URL_MAIN = "http://localhost:8080/api/";
+//const URL_MAIN = "/direccion IP/"; //separado de las githubpages
+
+//POST ====================================================================================================
+
+btnIngresar.addEventListener("click", function(event) {
+  event.preventDefault();
+
+      //Validacion de los campos
+
+      const myHeaders = new Headers();
+myHeaders.append("Content-Type", "application/json");
+
+const raw = JSON.stringify({
+  "nombre": `${txtNombre.toUpperCase()} ${txtApellidos.toUpperCase()}`,
+  "email": txtEmail,
+  "password": txtPassword
+});
+
+const requestOptions = {
+  method: "POST",
+  headers: myHeaders,
+  body: raw,
+  redirect: "follow"
+};
+
+fetch("http://localhost:8080/api/usuarios/", requestOptions)
+  .then((response) => response.text())
+  .then((result) => console.log(result))
+  .catch((error) => console.error(error));
+
+}); // evento
+    
+
